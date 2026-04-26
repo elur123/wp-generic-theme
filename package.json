@@ -1,0 +1,20 @@
+{
+  "name": "medspastarter",
+  "version": "1.0.0",
+  "description": "WordPress theme for medical spas — TailwindCSS v4 + Vite",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "vite": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

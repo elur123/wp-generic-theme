@@ -1,0 +1,376 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-primary:          #f25f5a;
+  --color-primary-light:    #fde8e8;
+  --color-primary-dark:     #d94441;
+  --color-secondary:        #C9A96E;
+  --color-secondary-light:  #F5ECD9;
+  --color-neutral-50:       #FAFAFA;
+  --color-neutral-100:      #F4F5F4;
+  --color-neutral-200:      #E5E7E6;
+  --color-neutral-700:      #3A3D3C;
+  --color-neutral-900:      #1A1C1B;
+  --color-error:            #C0392B;
+
+  /* Typography */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body:    Inter, system-ui, -apple-system, sans-serif;
+
+  /* Shadows */
+  --shadow-card:       0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-card-hover: 0 10px 25px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-nav:        0 1px 0 0 rgb(0 0 0 / 0.06);
+}
+
+/* ─── Dark Mode Variant ──────────────────────────────────────── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─── WordPress Preset Alignment ────────────────────────────── */
+:root {
+  --wp--preset--color--primary:          #f25f5a;
+  --wp--preset--color--primary-light:    #fde8e8;
+  --wp--preset--color--primary-dark:     #d94441;
+  --wp--preset--color--secondary:        #C9A96E;
+  --wp--preset--color--secondary-light:  #F5ECD9;
+  --wp--preset--color--neutral-50:       #FAFAFA;
+  --wp--preset--color--neutral-100:      #F4F5F4;
+  --wp--preset--color--neutral-700:      #3A3D3C;
+  --wp--preset--color--neutral-900:      #1A1C1B;
+  --wp--preset--color--white:            #FFFFFF;
+  --wp--preset--font-family--heading:    "Playfair Display", Georgia, serif;
+  --wp--preset--font-family--body:       Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* ─── Base Layer ─────────────────────────────────────────────── */
+@layer base {
+  html {
+    @apply scroll-smooth;
+    font-size: 16px;
+  }
+
+  body {
+    @apply font-body text-neutral-700 bg-neutral-50 antialiased leading-relaxed;
+    @apply dark:bg-neutral-900 dark:text-neutral-200;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-neutral-900 leading-tight;
+    @apply dark:text-neutral-50;
+  }
+
+  a {
+    @apply text-primary no-underline underline-offset-2 transition-colors duration-150;
+    @apply hover:text-primary-dark;
+    @apply dark:text-primary-light dark:hover:text-white;
+  }
+
+  img, video {
+    @apply max-w-full h-auto;
+  }
+
+  /* Focus ring — accessible on both light and dark */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+
+  /* WordPress alignment classes */
+  .alignleft  { @apply float-left me-6 mb-4 rtl:float-right; }
+  .alignright { @apply float-right ms-6 mb-4 rtl:float-left; }
+  .aligncenter { @apply block mx-auto mb-4; }
+  .alignwide  { @apply -mx-8 lg:-mx-16; }
+  .alignfull  { @apply w-screen relative left-1/2 -translate-x-1/2; }
+
+  /* Screen reader utility */
+  .screen-reader-text {
+    @apply sr-only;
+  }
+  .screen-reader-text:focus {
+    @apply not-sr-only fixed z-50 top-4 start-4 bg-white text-neutral-900 px-4 py-2 rounded shadow-lg text-sm font-semibold;
+  }
+}
+
+/* ─── Component Layer ────────────────────────────────────────── */
+@layer components {
+
+  /* Layout containers */
+  .section-container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 980px;
+  }
+  .section-wide {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1200px;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full
+           bg-primary text-white font-body font-semibold text-sm tracking-wide
+           hover:bg-primary-dark focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2
+           transition-all duration-200 no-underline;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full
+           border-2 border-primary text-primary font-body font-semibold text-sm tracking-wide
+           hover:bg-primary hover:text-white focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2
+           transition-all duration-200 no-underline;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full
+           bg-secondary text-neutral-900 font-body font-semibold text-sm tracking-wide
+           hover:bg-secondary/80 focus-visible:ring-2 focus-visible:ring-secondary/50 focus-visible:ring-offset-2
+           transition-all duration-200 no-underline;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover
+           transition-shadow duration-300 overflow-hidden;
+    @apply dark:bg-neutral-800 dark:shadow-none dark:border dark:border-neutral-700;
+  }
+
+  /* Post meta (date, author, category) */
+  .post-meta {
+    @apply flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-neutral-700/70;
+    @apply dark:text-neutral-400;
+  }
+  .post-meta a {
+    @apply text-neutral-700/70 hover:text-primary no-underline;
+    @apply dark:text-neutral-400 dark:hover:text-primary-light;
+  }
+  .post-meta svg {
+    @apply w-4 h-4 inline-block shrink-0;
+  }
+
+  /* Category badge */
+  .cat-badge {
+    @apply inline-block px-3 py-0.5 rounded-full text-xs font-semibold
+           bg-primary-light text-primary-dark no-underline;
+    @apply dark:bg-primary/20 dark:text-primary-light;
+  }
+
+  /* Entry content (post body) */
+  .entry-content {
+    @apply leading-relaxed;
+  }
+  .entry-content > * + * { @apply mt-5; }
+  .entry-content h2 { @apply text-2xl font-bold mt-10 mb-4; }
+  .entry-content h3 { @apply text-xl font-bold mt-8 mb-3; }
+  .entry-content h4 { @apply text-lg font-bold mt-6 mb-2; }
+  .entry-content ul { @apply list-disc ps-6 space-y-1; }
+  .entry-content ol { @apply list-decimal ps-6 space-y-1; }
+  .entry-content blockquote {
+    @apply border-s-4 border-primary ps-6 italic text-neutral-700/80 my-6;
+    @apply dark:text-neutral-400;
+  }
+  .entry-content pre {
+    @apply bg-neutral-100 rounded-xl p-4 overflow-x-auto text-sm;
+    @apply dark:bg-neutral-800;
+  }
+  .entry-content code {
+    @apply bg-neutral-100 rounded px-1.5 py-0.5 text-sm font-mono;
+    @apply dark:bg-neutral-800;
+  }
+  .entry-content pre code { @apply bg-transparent p-0; }
+  .entry-content table {
+    @apply w-full border-collapse text-sm;
+  }
+  .entry-content th, .entry-content td {
+    @apply border border-neutral-200 px-4 py-2 text-start;
+    @apply dark:border-neutral-700;
+  }
+  .entry-content th {
+    @apply bg-neutral-100 font-semibold;
+    @apply dark:bg-neutral-800;
+  }
+  .entry-content figure { @apply my-6; }
+  .entry-content figcaption { @apply text-sm text-neutral-700/60 text-center mt-2; }
+  .entry-content a { @apply underline; }
+  .entry-content img { @apply rounded-xl; }
+
+  /* Pagination */
+  .pagination-nav {
+    @apply flex items-center justify-center gap-2 py-8;
+  }
+  .pagination-nav a,
+  .pagination-nav span {
+    @apply flex items-center justify-center w-10 h-10 rounded-full text-sm font-medium
+           border border-neutral-200 text-neutral-700 no-underline
+           hover:bg-primary hover:text-white hover:border-primary transition-colors;
+    @apply dark:border-neutral-700 dark:text-neutral-300;
+  }
+  .pagination-nav .current {
+    @apply bg-primary text-white border-primary;
+  }
+
+  /* Navigation menus */
+  .nav-menu {
+    @apply list-none m-0 p-0;
+  }
+  .nav-menu a {
+    @apply text-neutral-700 no-underline font-medium text-sm hover:text-primary transition-colors;
+    @apply dark:text-neutral-300 dark:hover:text-primary-light;
+  }
+  .nav-menu .current-menu-item > a,
+  .nav-menu .current-page-ancestor > a {
+    @apply text-primary;
+    @apply dark:text-primary-light;
+  }
+
+  /* Dropdown sub-menus */
+  .nav-menu .sub-menu {
+    @apply hidden absolute top-full start-0 z-50 min-w-48
+           bg-white rounded-xl shadow-card-hover border border-neutral-100 py-2;
+    @apply dark:bg-neutral-800 dark:border-neutral-700;
+  }
+  .nav-menu > li.menu-item-has-children { @apply relative; }
+  .nav-menu > li.menu-item-has-children:hover > .sub-menu,
+  .nav-menu > li.menu-item-has-children:focus-within > .sub-menu { @apply block; }
+  .nav-menu .sub-menu a { @apply block px-4 py-2 text-sm hover:bg-primary-light; }
+
+  /* Widgets */
+  .widget { @apply mb-8; }
+  .widget ul { @apply space-y-2; }
+  .widget ul li { @apply text-sm; }
+  .widget ul a { @apply text-neutral-700 hover:text-primary no-underline; }
+  .widget ul a:hover { @apply underline; }
+
+  /* Comment form */
+  .comment-form input[type="text"],
+  .comment-form input[type="email"],
+  .comment-form input[type="url"],
+  .comment-form textarea {
+    @apply w-full px-4 py-2.5 rounded-xl border border-neutral-200 text-sm
+           focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary
+           bg-white transition;
+    @apply dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200;
+  }
+  .comment-form label { @apply block text-sm font-medium mb-1.5 text-neutral-700; }
+
+  /* Search form */
+  .search-form {
+    @apply flex gap-2;
+  }
+  .search-form input[type="search"] {
+    @apply flex-1 px-4 py-2.5 rounded-full border border-neutral-200 text-sm
+           focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary
+           bg-white transition;
+    @apply dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200;
+  }
+  .search-form button[type="submit"] {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-full
+           bg-primary text-white font-semibold text-sm tracking-wide
+           hover:bg-primary-dark focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2
+           transition-all duration-200 no-underline;
+  }
+
+  /* Back to top */
+  #back-to-top {
+    @apply fixed bottom-6 end-6 z-50 w-10 h-10 rounded-full
+           bg-primary text-white shadow-card-hover
+           flex items-center justify-center
+           opacity-0 pointer-events-none
+           transition-all duration-300;
+  }
+  #back-to-top.visible {
+    @apply opacity-100 pointer-events-auto;
+  }
+
+  /* Sticky header — enhanced shadow once user scrolls */
+  .site-header.is-scrolled {
+    @apply shadow-md;
+  }
+
+  /* Scroll-triggered animations (opt-in via data-animate attribute) */
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  [data-animate].is-animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  [data-animate-delay] { transition-delay: var(--animate-delay, 0ms); }
+  @media (prefers-reduced-motion: reduce) {
+    [data-animate] { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* Mobile drawer nav */
+  #mobile-menu .nav-menu a {
+    @apply block px-3 py-2.5 rounded-lg text-base text-neutral-700 no-underline font-medium
+           hover:bg-primary-light hover:text-primary transition-colors;
+    @apply dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-primary-light;
+  }
+  #mobile-menu .nav-menu .current-menu-item > a,
+  #mobile-menu .nav-menu .current-page-ancestor > a {
+    @apply text-primary bg-primary-light;
+    @apply dark:text-primary-light dark:bg-neutral-800;
+  }
+  #mobile-menu .nav-menu .sub-menu {
+    @apply static min-w-0 rounded-none border-0 shadow-none py-1 ms-3 mt-0.5
+           bg-transparent dark:bg-transparent;
+  }
+  #mobile-menu .nav-menu .sub-menu a {
+    @apply text-sm py-2;
+  }
+
+  /* Search overlay */
+  #search-overlay {
+    @apply fixed inset-0 z-[100] bg-neutral-900/80 backdrop-blur-sm
+           flex items-center justify-center p-4
+           opacity-0 pointer-events-none transition-opacity duration-200;
+  }
+  #search-overlay.open {
+    @apply opacity-100 pointer-events-auto;
+  }
+  #search-overlay .search-inner {
+    @apply w-full max-w-xl;
+  }
+}
+
+/* ─── WordPress Global Styles Compatibility ──────────────────────── */
+/*
+ * WordPress injects unlayered inline CSS in <head> (global-styles-inline-css)
+ * containing rules like:
+ *   a:where(:not(.wp-element-button)) { text-decoration: underline }
+ * Unlayered CSS always wins over @layer utilities, so no-underline loses.
+ * These unlayered rules in our external CSS (enqueued after WP's inline block)
+ * restore the correct decoration behavior by source-order precedence.
+ */
+a:where(:not(.wp-element-button)) {
+  text-decoration: none;
+}
+.entry-content a {
+  text-decoration: underline;
+}
+.widget ul a:hover {
+  text-decoration: underline;
+}
+
+/* ─── WordPress Block Compatibility ──────────────────────────────── */
+/* Cover block: fixed background (parallax). wp-block-library omits this
+   rule when the theme does not declare wp-block-styles support. */
+.wp-block-cover.has-parallax {
+  background-attachment: fixed;
+}
+
+/* .alignfull uses transform:translateX(-50%) to stretch to viewport width.
+   CSS transforms create a new compositing layer, which makes
+   background-attachment:fixed position against that layer instead of the
+   viewport — killing the parallax effect entirely.
+   Replace the transform with an equivalent left: calc(50% - 50vw) so the
+   element still reaches the viewport edges without a transform. */
+.wp-block-cover.has-parallax.alignfull {
+  transform: none;
+  left: calc(50% - 50vw);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wp-block-cover.has-parallax {
+    background-attachment: scroll;
+  }
+}

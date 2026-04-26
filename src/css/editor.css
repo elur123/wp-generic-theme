@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Block editor styles — mirrors main.css base/components */
+
+@theme {
+  --color-primary:       #f25f5a;
+  --color-primary-light: #fde8e8;
+  --color-secondary:     #C9A96E;
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body:    Inter, system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-body text-neutral-700 leading-relaxed antialiased;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-neutral-900 leading-tight;
+  }
+
+  a { @apply text-primary; }
+}
+
+@layer components {
+  .editor-styles-wrapper .entry-content blockquote {
+    @apply border-l-4 border-primary pl-6 italic text-neutral-700/80;
+  }
+}
