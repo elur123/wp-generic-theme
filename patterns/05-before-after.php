@@ -29,7 +29,7 @@
 <!-- wp:group {"style":{"border":{"radius":"1rem"},"spacing":{"padding":{"bottom":"0"}}},"backgroundColor":"neutral-100"} -->
 <div class="wp-block-group has-neutral-100-background-color has-background" style="border-radius:1rem">
 <!-- wp:image {"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"1rem 1rem 0 0"}}} -->
-<figure class="wp-block-image size-large" style="border-radius:1rem 1rem 0 0"><img src="https://placehold.co/600x500/F4F5F4/9CA3AF?text=Before" alt="Before treatment" style="border-radius:1rem 1rem 0 0"/></figure>
+<figure class="wp-block-image size-large" style="border-radius:1rem 1rem 0 0"><img src="https://placehold.co/600x500/F4F5F4/9CA3AF?text=Before" alt="Before treatment"/></figure>
 <!-- /wp:image -->
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"1.25rem","right":"1.25rem"}}}} -->
 <div class="wp-block-group" style="padding-top:1rem;padding-right:1.25rem;padding-bottom:1rem;padding-left:1.25rem">
@@ -47,7 +47,7 @@
 <!-- wp:group {"style":{"border":{"radius":"1rem"},"spacing":{"padding":{"bottom":"0"}}},"backgroundColor":"primary-light"} -->
 <div class="wp-block-group has-primary-light-background-color has-background" style="border-radius:1rem">
 <!-- wp:image {"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"1rem 1rem 0 0"}}} -->
-<figure class="wp-block-image size-large" style="border-radius:1rem 1rem 0 0"><img src="https://placehold.co/600x500/E6F4F3/2D7D7A?text=After" alt="After treatment" style="border-radius:1rem 1rem 0 0"/></figure>
+<figure class="wp-block-image size-large" style="border-radius:1rem 1rem 0 0"><img src="https://placehold.co/600x500/E6F4F3/2D7D7A?text=After" alt="After treatment"/></figure>
 <!-- /wp:image -->
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"1.25rem","right":"1.25rem"}}}} -->
 <div class="wp-block-group" style="padding-top:1rem;padding-right:1.25rem;padding-bottom:1rem;padding-left:1.25rem">

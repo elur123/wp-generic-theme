@@ -287,16 +287,16 @@
   /* Scroll-triggered animations (opt-in via data-animate attribute) */
   [data-animate] {
     opacity: 0;
-    transform: translateY(1rem);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    translate: 0 1rem;
+    transition: opacity 0.6s ease, translate 0.6s ease;
   }
   [data-animate].is-animated {
     opacity: 1;
-    transform: translateY(0);
+    translate: none;
   }
   [data-animate-delay] { transition-delay: var(--animate-delay, 0ms); }
   @media (prefers-reduced-motion: reduce) {
-    [data-animate] { opacity: 1; transform: none; transition: none; }
+    [data-animate] { opacity: 1; translate: none; transition: none; }
   }
 
   /* Mobile drawer nav */
@@ -358,14 +358,14 @@ a:where(:not(.wp-element-button)) {
   background-attachment: fixed;
 }
 
-/* .alignfull uses transform:translateX(-50%) to stretch to viewport width.
-   CSS transforms create a new compositing layer, which makes
-   background-attachment:fixed position against that layer instead of the
-   viewport — killing the parallax effect entirely.
-   Replace the transform with an equivalent left: calc(50% - 50vw) so the
-   element still reaches the viewport edges without a transform. */
+/* .alignfull uses Tailwind v4's native `translate` property (-translate-x-1/2
+   → translate:-50% 0). Any non-none CSS translate/transform on an ancestor
+   causes background-attachment:fixed to paint against that layer instead of
+   the viewport, killing the parallax effect.
+   Reset `translate` (not `transform` — they are separate CSS properties in
+   Tailwind v4) and replace the centering with left:calc(50%-50vw). */
 .wp-block-cover.has-parallax.alignfull {
-  transform: none;
+  translate: none;
   left: calc(50% - 50vw);
 }
 

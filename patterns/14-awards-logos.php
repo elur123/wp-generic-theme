@@ -25,7 +25,7 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"1.25rem","bottom":"1.25rem","left":"1.5rem","right":"1.5rem"}},"border":{"radius":"0.75rem"}},"className":"text-center border border-neutral-200"} -->
 <div class="wp-block-group text-center border border-neutral-200" style="border-radius:0.75rem;padding-top:1.25rem;padding-right:1.5rem;padding-bottom:1.25rem;padding-left:1.5rem">
 <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.5rem","fontWeight":"700"},"spacing":{"margin":{"bottom":"0.25rem"}}},"textColor":"primary"} --><p class="has-text-align-center has-primary-color has-text-color" style="font-size:1.5rem;font-weight:700;margin-bottom:0.25rem">CPCA</p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#6b7280"}}} --><p class="has-text-align-center" style="font-size:0.75rem;color:#6b7280">Cosmetic Physicians College of Australasia</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#6b7280"}}} --><p class="has-text-align-center has-text-color" style="font-size:0.75rem;color:#6b7280">Cosmetic Physicians College of Australasia</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 </div>
@@ -36,7 +36,7 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"1.25rem","bottom":"1.25rem","left":"1.5rem","right":"1.5rem"}},"border":{"radius":"0.75rem"}},"className":"text-center border border-neutral-200"} -->
 <div class="wp-block-group text-center border border-neutral-200" style="border-radius:0.75rem;padding-top:1.25rem;padding-right:1.5rem;padding-bottom:1.25rem;padding-left:1.5rem">
 <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.5rem","fontWeight":"700"},"spacing":{"margin":{"bottom":"0.25rem"}}},"textColor":"primary"} --><p class="has-text-align-center has-primary-color has-text-color" style="font-size:1.5rem;font-weight:700;margin-bottom:0.25rem">AHPRA</p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#6b7280"}}} --><p class="has-text-align-center" style="font-size:0.75rem;color:#6b7280">Australian Health Practitioner Regulation Agency</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#6b7280"}}} --><p class="has-text-align-center has-text-color" style="font-size:0.75rem;color:#6b7280">Australian Health Practitioner Regulation Agency</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 </div>
@@ -47,7 +47,7 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"1.25rem","bottom":"1.25rem","left":"1.5rem","right":"1.5rem"}},"border":{"radius":"0.75rem"}},"className":"text-center border border-neutral-200"} -->
 <div class="wp-block-group text-center border border-neutral-200" style="border-radius:0.75rem;padding-top:1.25rem;padding-right:1.5rem;padding-bottom:1.25rem;padding-left:1.5rem">
 <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.5rem","fontWeight":"700"},"spacing":{"margin":{"bottom":"0.25rem"}}},"textColor":"primary"} --><p class="has-text-align-center has-primary-color has-text-color" style="font-size:1.5rem;font-weight:700;margin-bottom:0.25rem">AMA</p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#6b7280"}}} --><p class="has-text-align-center" style="font-size:0.75rem;color:#6b7280">Australian Medical Association Member</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#6b7280"}}} --><p class="has-text-align-center has-text-color" style="font-size:0.75rem;color:#6b7280">Australian Medical Association Member</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 </div>
@@ -58,7 +58,7 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"1.25rem","bottom":"1.25rem","left":"1.5rem","right":"1.5rem"}},"border":{"radius":"0.75rem"}},"className":"text-center border border-neutral-200"} -->
 <div class="wp-block-group text-center border border-neutral-200" style="border-radius:0.75rem;padding-top:1.25rem;padding-right:1.5rem;padding-bottom:1.25rem;padding-left:1.5rem">
 <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.5rem","fontWeight":"700"},"spacing":{"margin":{"bottom":"0.25rem"}}},"textColor":"primary"} --><p class="has-text-align-center has-primary-color has-text-color" style="font-size:1.5rem;font-weight:700;margin-bottom:0.25rem">RACGP</p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#6b7280"}}} --><p class="has-text-align-center" style="font-size:0.75rem;color:#6b7280">Royal Australian College of General Practitioners</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#6b7280"}}} --><p class="has-text-align-center has-text-color" style="font-size:0.75rem;color:#6b7280">Royal Australian College of General Practitioners</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 </div>
@@ -69,7 +69,7 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"1.25rem","bottom":"1.25rem","left":"1.5rem","right":"1.5rem"}},"border":{"radius":"0.75rem"}},"className":"text-center border border-neutral-200"} -->
 <div class="wp-block-group text-center border border-neutral-200" style="border-radius:0.75rem;padding-top:1.25rem;padding-right:1.5rem;padding-bottom:1.25rem;padding-left:1.5rem">
 <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.5rem","fontWeight":"700"},"spacing":{"margin":{"bottom":"0.25rem"}}},"textColor":"primary"} --><p class="has-text-align-center has-primary-color has-text-color" style="font-size:1.5rem;font-weight:700;margin-bottom:0.25rem">TGA</p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#6b7280"}}} --><p class="has-text-align-center" style="font-size:0.75rem;color:#6b7280">Therapeutic Goods Administration Compliant</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"#6b7280"}}} --><p class="has-text-align-center has-text-color" style="font-size:0.75rem;color:#6b7280">Therapeutic Goods Administration Compliant</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 </div>

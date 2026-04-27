@@ -9,7 +9,7 @@
 ?>
 
 <!-- wp:group {"align":"full","style":{"color":{"gradient":"linear-gradient(135deg,#d94441 0%,#f25f5a 100%)"},"spacing":{"padding":{"top":"4rem","bottom":"4rem","left":"1.5rem","right":"1.5rem"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull" style="background:linear-gradient(135deg,#d94441 0%,#f25f5a 100%);padding-top:4rem;padding-right:1.5rem;padding-bottom:4rem;padding-left:1.5rem">
+<div class="wp-block-group alignfull has-background" style="background:linear-gradient(135deg,#d94441 0%,#f25f5a 100%);padding-top:4rem;padding-right:1.5rem;padding-bottom:4rem;padding-left:1.5rem">
 <!-- wp:group {"layout":{"type":"constrained","contentSize":"980px"}} -->
 <div class="wp-block-group">
 

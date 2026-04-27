@@ -78,10 +78,10 @@
 		<?php if ( 'centered-logo' === $header_layout ) : ?>
 
 		<!-- Layout: centered logo — nav left · logo absolute center · actions right -->
-		<div class="section-wide relative min-h-[4rem] md:min-h-[5rem]">
+		<div class="section-wide relative">
 
 			<!-- Mobile row: branding left · actions right -->
-			<div class="flex items-center justify-between py-2 md:py-3 gap-4 lg:hidden">
+			<div class="flex items-center justify-between py-2 md:py-3 gap-4 min-h-[4rem] md:min-h-[5rem] lg:hidden">
 				<?php echo $branding; // phpcs:ignore ?>
 				<div class="header-actions flex items-center gap-1">
 					<?php echo $actions; // phpcs:ignore ?>
@@ -89,7 +89,7 @@
 			</div>
 
 			<!-- Desktop row: nav left · logo absolute center · actions right -->
-			<div class="hidden lg:flex items-center justify-between py-2 md:py-3">
+			<div class="hidden lg:flex items-center justify-between py-2 md:py-3 min-h-[4rem] md:min-h-[5rem]">
 				<nav id="main-navigation" <?php echo $nav_attrs; // phpcs:ignore ?>
 					class="main-navigation">
 					<?php do_action( 'medspastarter_primary_menu' ); ?>
@@ -107,10 +107,10 @@
 		<?php elseif ( 'logo-left' === $header_layout ) : ?>
 
 		<!-- Layout: logo left, menu + actions grouped right -->
-		<div class="section-wide min-h-[4rem] md:min-h-[5rem]">
+		<div class="section-wide">
 
 			<!-- Mobile row: branding left · actions right -->
-			<div class="flex items-center justify-between py-2 md:py-3 gap-4 lg:hidden">
+			<div class="flex items-center justify-between py-2 md:py-3 gap-4 min-h-[4rem] md:min-h-[5rem] lg:hidden">
 				<?php echo $branding; // phpcs:ignore ?>
 				<div class="header-actions flex items-center gap-1">
 					<?php echo $actions; // phpcs:ignore ?>
@@ -118,7 +118,7 @@
 			</div>
 
 			<!-- Desktop row: branding left · nav + actions grouped right -->
-			<div class="hidden lg:flex items-center justify-between py-2 md:py-3 gap-4">
+			<div class="hidden lg:flex items-center justify-between py-2 md:py-3 gap-4 min-h-[4rem] md:min-h-[5rem]">
 				<?php echo $branding; // phpcs:ignore ?>
 				<div class="flex items-center gap-2">
 					<nav id="main-navigation" <?php echo $nav_attrs; // phpcs:ignore ?>
@@ -136,10 +136,10 @@
 		<?php elseif ( 'split-menu' === $header_layout ) : ?>
 
 		<!-- Layout: split menu — left half · logo absolute center · right half -->
-		<div class="section-wide relative min-h-[4rem] md:min-h-[5rem]">
+		<div class="section-wide relative">
 
 			<!-- Mobile row: branding left · hamburger right -->
-			<div class="flex items-center justify-between py-2 md:py-3 gap-4 lg:hidden">
+			<div class="flex items-center justify-between py-2 md:py-3 gap-4 min-h-[4rem] md:min-h-[5rem] lg:hidden">
 				<?php echo $branding; // phpcs:ignore ?>
 				<button class="menu-toggle p-2 rounded-full text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800 transition-colors"
 					aria-controls="mobile-menu"
@@ -150,7 +150,7 @@
 			</div>
 
 			<!-- Desktop row: left nav · logo absolute center · right nav -->
-			<div class="hidden lg:flex items-center justify-between py-2 md:py-3">
+			<div class="hidden lg:flex items-center justify-between py-2 md:py-3 min-h-[4rem] md:min-h-[5rem]">
 				<nav id="main-navigation-left" <?php echo $nav_schema; // phpcs:ignore ?>
 					aria-label="<?php esc_attr_e( 'Primary navigation left', 'medspastarter' ); ?>"
 					class="main-navigation">

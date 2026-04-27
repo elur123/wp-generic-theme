@@ -9,7 +9,7 @@
 ?>
 
 <!-- wp:group {"align":"full","style":{"color":{"gradient":"linear-gradient(135deg,#d94441 0%,#f25f5a 100%)"},"spacing":{"padding":{"top":"4rem","bottom":"4rem","left":"1.5rem","right":"1.5rem"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull" style="background:linear-gradient(135deg,#d94441 0%,#f25f5a 100%);padding-top:4rem;padding-right:1.5rem;padding-bottom:4rem;padding-left:1.5rem">
+<div class="wp-block-group alignfull has-background" style="background:linear-gradient(135deg,#d94441 0%,#f25f5a 100%);padding-top:4rem;padding-right:1.5rem;padding-bottom:4rem;padding-left:1.5rem">
 <!-- wp:group {"layout":{"type":"constrained","contentSize":"640px"},"className":"text-center"} -->
 <div class="wp-block-group text-center">
 
@@ -27,7 +27,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link has-secondary-background-color has-neutral-900-color has-background has-text-color wp-element-button" href="#book" style="border-radius:9999px;padding-top:0.9rem;padding-right:2rem;padding-bottom:0.9rem;padding-left:2rem">Book Free Consultation</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"style":{"border":{"radius":"9999px","color":"rgba(255,255,255,0.5)","width":"2px"},"spacing":{"padding":{"top":"0.9rem","bottom":"0.9rem","left":"2rem","right":"2rem"}}},"textColor":"white","className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-color has-text-color wp-element-button" href="tel:+1234567890" style="border-radius:9999px;border-color:rgba(255,255,255,0.5);border-width:2px;padding-top:0.9rem;padding-right:2rem;padding-bottom:0.9rem;padding-left:2rem">Call Us Today</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-color has-text-color has-border-color wp-element-button" href="tel:+1234567890" style="border-radius:9999px;border-color:rgba(255,255,255,0.5);border-width:2px;padding-top:0.9rem;padding-right:2rem;padding-bottom:0.9rem;padding-left:2rem">Call Us Today</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

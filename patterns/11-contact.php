@@ -33,28 +33,28 @@
 <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"1.25rem"},"blockGap":"0.375rem"}}} -->
 <div class="wp-block-group" style="margin-bottom:1.25rem;gap:0.375rem">
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","letterSpacing":"0.08em","textTransform":"uppercase"}},"textColor":"primary"} --><p class="has-primary-color has-text-color" style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase">Address</p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9375rem"},"color":{"text":"#3A3D3C"}}} --><p style="font-size:0.9375rem;color:#3A3D3C">123 Wellness Avenue, Suite 400<br>Melbourne VIC 3000, Australia</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9375rem"},"color":{"text":"#3A3D3C"}}} --><p class="has-text-color" style="font-size:0.9375rem;color:#3A3D3C">123 Wellness Avenue, Suite 400<br>Melbourne VIC 3000, Australia</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"1.25rem"},"blockGap":"0.375rem"}}} -->
 <div class="wp-block-group" style="margin-bottom:1.25rem;gap:0.375rem">
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","letterSpacing":"0.08em","textTransform":"uppercase"}},"textColor":"primary"} --><p class="has-primary-color has-text-color" style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase">Phone</p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9375rem"},"color":{"text":"#3A3D3C"}}} --><p style="font-size:0.9375rem;color:#3A3D3C"><a href="tel:+61399991234" style="color:#f25f5a">+61 3 9999 1234</a></p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9375rem"},"color":{"text":"#3A3D3C"}}} --><p class="has-text-color" style="font-size:0.9375rem;color:#3A3D3C"><a href="tel:+61399991234" style="color:#f25f5a">+61 3 9999 1234</a></p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"1.25rem"},"blockGap":"0.375rem"}}} -->
 <div class="wp-block-group" style="margin-bottom:1.25rem;gap:0.375rem">
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","letterSpacing":"0.08em","textTransform":"uppercase"}},"textColor":"primary"} --><p class="has-primary-color has-text-color" style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase">Email</p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9375rem"},"color":{"text":"#3A3D3C"}}} --><p style="font-size:0.9375rem;color:#3A3D3C"><a href="mailto:hello@yourclinic.com.au" style="color:#f25f5a">hello@yourclinic.com.au</a></p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9375rem"},"color":{"text":"#3A3D3C"}}} --><p class="has-text-color" style="font-size:0.9375rem;color:#3A3D3C"><a href="mailto:hello@yourclinic.com.au" style="color:#f25f5a">hello@yourclinic.com.au</a></p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"1.75rem"},"blockGap":"0.375rem"}}} -->
 <div class="wp-block-group" style="margin-bottom:1.75rem;gap:0.375rem">
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","letterSpacing":"0.08em","textTransform":"uppercase"}},"textColor":"primary"} --><p class="has-primary-color has-text-color" style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase">Opening Hours</p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"},"color":{"text":"#3A3D3C"}}} --><p style="font-size:0.9375rem;line-height:1.8;color:#3A3D3C">Monday – Friday: 9am – 7pm<br>Saturday: 9am – 5pm<br>Sunday: Closed</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9375rem","lineHeight":"1.8"},"color":{"text":"#3A3D3C"}}} --><p class="has-text-color" style="font-size:0.9375rem;line-height:1.8;color:#3A3D3C">Monday – Friday: 9am – 7pm<br>Saturday: 9am – 5pm<br>Sunday: Closed</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 

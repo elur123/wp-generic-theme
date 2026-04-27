@@ -26,16 +26,4 @@ function medspastarter_customizer_footer( WP_Customize_Manager $wp_customize ): 
 		'type'        => 'textarea',
 	] );
 
-	// Social links — footer
-	$wp_customize->add_setting( 'social_links_footer', [
-		'default'           => '',
-		'sanitize_callback' => 'medspastarter_sanitize_textarea',
-		'transport'         => 'refresh',
-	] );
-	$wp_customize->add_control( 'social_links_footer', [
-		'label'       => esc_html__( 'Social Icon URLs', 'medspastarter' ),
-		'description' => esc_html__( 'Paste one URL per line or comma-separated. Supports: Facebook, Instagram, LinkedIn, YouTube, TikTok, Twitter/X.', 'medspastarter' ),
-		'section'     => 'medspastarter_footer',
-		'type'        => 'textarea',
-	] );
 }

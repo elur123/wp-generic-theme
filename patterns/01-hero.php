@@ -9,7 +9,7 @@
 ?>
 
 <!-- wp:group {"align":"full","style":{"color":{"gradient":"linear-gradient(150deg,#d94441 0%,#f25f5a 55%,#f57b77 100%)"},"spacing":{"padding":{"top":"6rem","bottom":"6rem","left":"1.5rem","right":"1.5rem"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull" style="padding-top:6rem;padding-right:1.5rem;padding-bottom:6rem;padding-left:1.5rem;background:linear-gradient(150deg,#d94441 0%,#f25f5a 55%,#f57b77 100%)">
+<div class="wp-block-group alignfull has-background" style="padding-top:6rem;padding-right:1.5rem;padding-bottom:6rem;padding-left:1.5rem;background:linear-gradient(150deg,#d94441 0%,#f25f5a 55%,#f57b77 100%)">
 
 <!-- wp:group {"layout":{"type":"constrained","contentSize":"800px"},"className":"text-center"} -->
 <div class="wp-block-group text-center">
@@ -32,7 +32,7 @@
 <div class="wp-block-button"><a class="wp-block-button__link has-secondary-background-color has-neutral-900-color has-background has-text-color wp-element-button" href="#book" style="border-radius:9999px;padding-top:0.9rem;padding-right:2rem;padding-bottom:0.9rem;padding-left:2rem">Book a Consultation</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"style":{"border":{"radius":"9999px","color":"rgba(255,255,255,0.7)","width":"2px"},"spacing":{"padding":{"top":"0.9rem","bottom":"0.9rem","left":"2rem","right":"2rem"}}},"textColor":"white","className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-color has-text-color wp-element-button" href="#treatments" style="border-radius:9999px;border-color:rgba(255,255,255,0.7);border-width:2px;padding-top:0.9rem;padding-right:2rem;padding-bottom:0.9rem;padding-left:2rem">Explore Treatments</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-color has-text-color has-border-color wp-element-button" href="#treatments" style="border-radius:9999px;border-color:rgba(255,255,255,0.7);border-width:2px;padding-top:0.9rem;padding-right:2rem;padding-bottom:0.9rem;padding-left:2rem">Explore Treatments</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

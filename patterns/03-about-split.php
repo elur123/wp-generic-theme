@@ -18,7 +18,7 @@
 <!-- wp:column {"width":"50%"} -->
 <div class="wp-block-column" style="flex-basis:50%">
 <!-- wp:image {"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"1rem"}}} -->
-<figure class="wp-block-image size-large" style="border-radius:1rem"><img src="https://placehold.co/700x800/E6F4F3/2D7D7A?text=Clinic+Image" alt="Our clinic environment" style="border-radius:1rem"/></figure>
+<figure class="wp-block-image size-large" style="border-radius:1rem"><img src="https://placehold.co/700x800/E6F4F3/2D7D7A?text=Clinic+Image" alt="Our clinic environment"/></figure>
 <!-- /wp:image -->
 </div>
 <!-- /wp:column -->
@@ -32,10 +32,10 @@
 <h2 class="wp-block-heading" style="font-family:var(--wp--preset--font-family--heading);font-size:clamp(1.75rem,3.5vw,2.5rem);margin-top:0;margin-bottom:1rem">Where Science Meets<br>Natural Beauty</h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"1rem","lineHeight":"1.75"},"spacing":{"margin":{"bottom":"1rem"}},"color":{"text":"#6b7280"}}} -->
-<p style="font-size:1rem;line-height:1.75;margin-bottom:1rem;color:#6b7280">Our clinic combines cutting-edge aesthetic medicine with a commitment to natural, harmonious results. Every treatment plan is tailored to your unique facial anatomy and personal goals.</p>
+<p class="has-text-color" style="font-size:1rem;line-height:1.75;margin-bottom:1rem;color:#6b7280">Our clinic combines cutting-edge aesthetic medicine with a commitment to natural, harmonious results. Every treatment plan is tailored to your unique facial anatomy and personal goals.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"1rem","lineHeight":"1.75"},"spacing":{"margin":{"bottom":"2rem"}}},"color":{"text":"#6b7280"}} -->
-<p style="font-size:1rem;line-height:1.75;margin-bottom:2rem;color:#6b7280">Led by board-certified physicians with over a decade of experience, we pride ourselves on subtle enhancements that let your natural beauty shine through.</p>
+<p class="has-text-color" style="font-size:1rem;line-height:1.75;margin-bottom:2rem;color:#6b7280">Led by board-certified physicians with over a decade of experience, we pride ourselves on subtle enhancements that let your natural beauty shine through.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:columns {"isStackedOnMobile":false,"style":{"spacing":{"blockGap":{"left":"1.5rem","top":"1rem"},"margin":{"bottom":"2rem"}}}} -->
@@ -45,7 +45,7 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"1rem","right":"1rem"}},"border":{"radius":"0.75rem"}},"backgroundColor":"primary-light"} -->
 <div class="wp-block-group has-primary-light-background-color has-background" style="border-radius:0.75rem;padding-top:1rem;padding-right:1rem;padding-bottom:1rem;padding-left:1rem">
 <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.75rem","fontWeight":"700"}},"textColor":"primary"} --><h3 class="wp-block-heading has-primary-color has-text-color" style="font-size:1.75rem;font-weight:700">10+</h3><!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8125rem"},"color":{"text":"#3A3D3C"}}} --><p style="font-size:0.8125rem;color:#3A3D3C">Years of Experience</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8125rem"},"color":{"text":"#3A3D3C"}}} --><p class="has-text-color" style="font-size:0.8125rem;color:#3A3D3C">Years of Experience</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 </div>
@@ -55,7 +55,7 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"1rem","right":"1rem"}},"border":{"radius":"0.75rem"}},"backgroundColor":"primary-light"} -->
 <div class="wp-block-group has-primary-light-background-color has-background" style="border-radius:0.75rem;padding-top:1rem;padding-right:1rem;padding-bottom:1rem;padding-left:1rem">
 <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.75rem","fontWeight":"700"}},"textColor":"primary"} --><h3 class="wp-block-heading has-primary-color has-text-color" style="font-size:1.75rem;font-weight:700">5,000+</h3><!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8125rem"},"color":{"text":"#3A3D3C"}}} --><p style="font-size:0.8125rem;color:#3A3D3C">Patients Treated</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8125rem"},"color":{"text":"#3A3D3C"}}} --><p class="has-text-color" style="font-size:0.8125rem;color:#3A3D3C">Patients Treated</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 </div>
