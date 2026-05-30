@@ -17,12 +17,14 @@ require_once get_template_directory() . '/inc/template-tags.php';
 require_once get_template_directory() . '/inc/template-functions.php';
 require_once get_template_directory() . '/inc/template-hooks.php';
 require_once get_template_directory() . '/inc/blocks/block-patterns.php';
+require_once get_template_directory() . '/inc/blocks/responsive-typography.php';
 require_once get_template_directory() . '/inc/customizer/customizer.php';
 require_once get_template_directory() . '/starter-content/starter-content.php';
 
 if ( is_admin() ) {
 	require_once get_template_directory() . '/inc/admin/demo-importer.php';
 	require_once get_template_directory() . '/inc/admin/welcome.php';
+	require_once get_template_directory() . '/inc/admin/blank-canvas-meta.php';
 }
 
 if ( class_exists( 'WooCommerce' ) ) {
