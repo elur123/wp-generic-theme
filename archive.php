@@ -2,7 +2,7 @@
 /**
  * Archive template — categories, tags, author, date, custom post types
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
 get_header();
@@ -13,19 +13,19 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-		<?php medspastarter_breadcrumbs(); ?>
+		<?php genericstarter_breadcrumbs(); ?>
 
-		<div class="content-area <?php echo medspastarter_has_sidebar() ? 'lg:grid lg:grid-cols-[1fr_300px] lg:gap-12' : ''; ?>">
+		<div class="content-area <?php echo genericstarter_has_sidebar() ? 'lg:grid lg:grid-cols-[1fr_300px] lg:gap-12' : ''; ?>">
 
 			<div class="posts-wrap">
-				<div class="<?php echo esc_attr( medspastarter_blog_grid_class() ); ?>">
+				<div class="<?php echo esc_attr( genericstarter_blog_grid_class() ); ?>">
 					<?php while ( have_posts() ) :
 						the_post();
 						get_template_part( 'template-parts/content', 'excerpt' );
 					endwhile; ?>
 				</div>
 
-				<?php do_action( 'medspastarter_pagination' ); ?>
+				<?php do_action( 'genericstarter_pagination' ); ?>
 			</div>
 
 			<?php get_sidebar(); ?>

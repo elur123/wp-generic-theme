@@ -19,10 +19,10 @@
 	 * @returns {HTMLStyleElement}
 	 */
 	function getColorStyle() {
-		var el = document.getElementById( 'medspastarter-color-overrides' );
+		var el = document.getElementById( 'genericstarter-color-overrides' );
 		if ( ! el ) {
 			el = document.createElement( 'style' );
-			el.id = 'medspastarter-color-overrides';
+			el.id = 'genericstarter-color-overrides';
 			document.head.appendChild( el );
 		}
 		return el;
@@ -122,22 +122,12 @@
 		} );
 	} );
 
-	// ── Booking URL (update href on the header CTA anchor) ───────────────────
-
-	wp.customize( 'booking_url', function ( value ) {
-		value.bind( function ( newval ) {
-			document.querySelectorAll( '[data-booking-cta]' ).forEach( function ( el ) {
-				el.href = newval;
-			} );
-		} );
-	} );
-
 	// ── Site Identity ─────────────────────────────────────────────────────────
 
 	wp.customize( 'logo_width', function ( value ) {
 		value.bind( function ( newval ) {
 			var px = parseInt( newval, 10 ) + 'px';
-			var style = document.getElementById( 'medspastarter-logo-width' );
+			var style = document.getElementById( 'genericstarter-logo-width' );
 			if ( style ) {
 				style.textContent = '.site-logo a{display:block;line-height:0;}.custom-logo{display:block;max-width:' + px + ';width:100%;height:auto;}';
 			}

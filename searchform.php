@@ -2,24 +2,24 @@
 /**
  * Search form
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
 $unique_id = wp_unique_id( 'search-form-' );
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<label for="<?php echo esc_attr( $unique_id ); ?>" class="sr-only">
-		<?php esc_html_e( 'Search for:', 'medspastarter' ); ?>
+		<?php esc_html_e( 'Search for:', 'genericstarter' ); ?>
 	</label>
 	<input
 		type="search"
 		id="<?php echo esc_attr( $unique_id ); ?>"
 		class=""
-		placeholder="<?php echo esc_attr_x( 'Search treatments, articles&hellip;', 'placeholder', 'medspastarter' ); ?>"
+		placeholder="<?php echo esc_attr_x( 'Search treatments, articles&hellip;', 'placeholder', 'genericstarter' ); ?>"
 		value="<?php echo get_search_query(); ?>"
 		name="s"
 	>
-	<button type="submit" class="btn-primary py-2.5 px-4" aria-label="<?php esc_attr_e( 'Submit search', 'medspastarter' ); ?>">
-		<?php medspastarter_icon( 'magnifying-glass', 'w-4 h-4' ); ?>
+	<button type="submit" class="btn-primary py-2.5 px-4" aria-label="<?php esc_attr_e( 'Submit search', 'genericstarter' ); ?>">
+		<?php genericstarter_icon( 'magnifying-glass', 'w-4 h-4' ); ?>
 	</button>
 </form>

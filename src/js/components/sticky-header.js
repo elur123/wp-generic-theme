@@ -5,7 +5,7 @@
 import { throttle } from '../utils/helpers.js'
 
 export function initStickyHeader() {
-  if (!window.medspastarter_options?.sticky_header) return
+  if (!window.genericstarter_options?.sticky_header) return
 
   const header = document.querySelector('#masthead')
   if (!header) return

@@ -2,7 +2,7 @@
 /**
  * Page template
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
 get_header();
@@ -10,7 +10,7 @@ get_header();
 
 <main id="main" class="site-main flex-1 overflow-x-hidden" role="main">
 	<div class="section-container">
-		<div class="content-area <?php echo medspastarter_has_sidebar() ? 'lg:grid lg:grid-cols-[1fr_300px] lg:gap-12' : ''; ?>">
+		<div class="content-area <?php echo genericstarter_has_sidebar() ? 'lg:grid lg:grid-cols-[1fr_300px] lg:gap-12' : ''; ?>">
 
 			<div class="page-wrap">
 				<?php while ( have_posts() ) :

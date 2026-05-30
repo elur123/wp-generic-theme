@@ -2,7 +2,7 @@
 /**
  * Search results template
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
 get_header();
@@ -16,7 +16,7 @@ get_header();
 				<?php
 				printf(
 					/* translators: %s: search term */
-					esc_html__( 'Results for: %s', 'medspastarter' ),
+					esc_html__( 'Results for: %s', 'genericstarter' ),
 					'<span class="text-primary">' . get_search_query() . '</span>'
 				); ?>
 			</h1>
@@ -27,14 +27,14 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-		<div class="<?php echo esc_attr( medspastarter_blog_grid_class() ); ?>">
+		<div class="<?php echo esc_attr( genericstarter_blog_grid_class() ); ?>">
 			<?php while ( have_posts() ) :
 				the_post();
 				get_template_part( 'template-parts/content', 'search' );
 			endwhile; ?>
 		</div>
 
-		<?php do_action( 'medspastarter_pagination' ); ?>
+		<?php do_action( 'genericstarter_pagination' ); ?>
 
 		<?php else : ?>
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>

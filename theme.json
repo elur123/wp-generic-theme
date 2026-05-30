@@ -23,13 +23,13 @@
       "fontFamilies": [
         {
           "slug": "heading",
-          "name": "Playfair Display",
-          "fontFamily": "\"Playfair Display\", Georgia, serif"
+          "name": "Cormorant Garamond",
+          "fontFamily": "\"Cormorant Garamond\", Georgia, serif"
         },
         {
           "slug": "body",
-          "name": "Inter",
-          "fontFamily": "Inter, system-ui, -apple-system, sans-serif"
+          "name": "Mulish",
+          "fontFamily": "\"Mulish\", system-ui, -apple-system, sans-serif"
         }
       ],
       "fontSizes": [

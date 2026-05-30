@@ -8,7 +8,7 @@
 applyInitialDarkMode()
 
 function applyInitialDarkMode() {
-  const saved      = localStorage.getItem('medspastarter-dark-mode')
+  const saved      = localStorage.getItem('genericstarter-dark-mode')
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
   const isDark     = saved === 'dark' || (saved === null && prefersDark)
   document.documentElement.classList.toggle('dark', isDark)
@@ -28,14 +28,14 @@ export function initDarkMode() {
   toggles.forEach(btn => {
     btn.addEventListener('click', () => {
       const isDark = document.documentElement.classList.toggle('dark')
-      localStorage.setItem('medspastarter-dark-mode', isDark ? 'dark' : 'light')
+      localStorage.setItem('genericstarter-dark-mode', isDark ? 'dark' : 'light')
       syncToggles()
     })
   })
 
   // Follow system preference changes only when the user hasn't manually set a preference
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (localStorage.getItem('medspastarter-dark-mode') !== null) return
+    if (localStorage.getItem('genericstarter-dark-mode') !== null) return
     document.documentElement.classList.toggle('dark', e.matches)
     syncToggles()
   })

@@ -3,11 +3,11 @@ declare(strict_types=1);
 /**
  * Template tag functions — output helpers for templates
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
-if ( ! function_exists( 'medspastarter_posted_on' ) ) :
-	function medspastarter_posted_on(): void {
+if ( ! function_exists( 'genericstarter_posted_on' ) ) :
+	function genericstarter_posted_on(): void {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
@@ -20,54 +20,54 @@ if ( ! function_exists( 'medspastarter_posted_on' ) ) :
 		);
 
 		echo '<span class="posted-on flex items-center gap-1">';
-		medspastarter_icon( 'calendar', 'w-4 h-4 shrink-0' );
+		genericstarter_icon( 'calendar', 'w-4 h-4 shrink-0' );
 		echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 		echo '</span>';
 	}
 endif;
 
-if ( ! function_exists( 'medspastarter_posted_by' ) ) :
-	function medspastarter_posted_by(): void {
+if ( ! function_exists( 'genericstarter_posted_by' ) ) :
+	function genericstarter_posted_by(): void {
 		echo '<span class="byline flex items-center gap-1">';
-		medspastarter_icon( 'user', 'w-4 h-4 shrink-0' );
+		genericstarter_icon( 'user', 'w-4 h-4 shrink-0' );
 		echo '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">'
 			. esc_html( get_the_author() ) . '</a>';
 		echo '</span>';
 	}
 endif;
 
-if ( ! function_exists( 'medspastarter_posted_in' ) ) :
-	function medspastarter_posted_in(): void {
+if ( ! function_exists( 'genericstarter_posted_in' ) ) :
+	function genericstarter_posted_in(): void {
 		if ( 'post' !== get_post_type() ) {
 			return;
 		}
-		$categories_list = get_the_category_list( esc_html__( ', ', 'medspastarter' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'genericstarter' ) );
 		if ( $categories_list ) {
 			echo '<span class="cat-links flex items-center gap-1">';
-			medspastarter_icon( 'folder', 'w-4 h-4 shrink-0' );
+			genericstarter_icon( 'folder', 'w-4 h-4 shrink-0' );
 			echo $categories_list; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo '</span>';
 		}
 	}
 endif;
 
-if ( ! function_exists( 'medspastarter_tagged_in' ) ) :
-	function medspastarter_tagged_in(): void {
+if ( ! function_exists( 'genericstarter_tagged_in' ) ) :
+	function genericstarter_tagged_in(): void {
 		if ( 'post' !== get_post_type() ) {
 			return;
 		}
-		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'medspastarter' ) );
+		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'genericstarter' ) );
 		if ( $tags_list ) {
 			echo '<div class="tag-links flex flex-wrap items-center gap-2 mt-4">';
-			medspastarter_icon( 'tag', 'w-4 h-4 shrink-0 text-neutral-700/50 dark:text-neutral-500' );
+			genericstarter_icon( 'tag', 'w-4 h-4 shrink-0 text-neutral-700/50 dark:text-neutral-500' );
 			echo $tags_list; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo '</div>';
 		}
 	}
 endif;
 
-if ( ! function_exists( 'medspastarter_post_thumbnail' ) ) :
-	function medspastarter_post_thumbnail( string $size = 'large' ): void {
+if ( ! function_exists( 'genericstarter_post_thumbnail' ) ) :
+	function genericstarter_post_thumbnail( string $size = 'large' ): void {
 		if ( post_password_required() || is_attachment() ) {
 			return;
 		}
@@ -82,7 +82,7 @@ if ( ! function_exists( 'medspastarter_post_thumbnail' ) ) :
 			echo '</div>';
 		} else {
 			echo '<a class="post-thumbnail block overflow-hidden rounded-t-2xl aspect-video" href="' . esc_url( get_permalink() ) . '" tabindex="-1" aria-hidden="true">';
-			the_post_thumbnail( 'medspastarter-card', [
+			the_post_thumbnail( 'genericstarter-card', [
 				'class' => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105',
 				'alt'   => the_title_attribute( [ 'echo' => false ] ),
 			] );
@@ -91,13 +91,13 @@ if ( ! function_exists( 'medspastarter_post_thumbnail' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'medspastarter_edit_link' ) ) :
-	function medspastarter_edit_link(): void {
+if ( ! function_exists( 'genericstarter_edit_link' ) ) :
+	function genericstarter_edit_link(): void {
 		edit_post_link(
 			sprintf(
 				wp_kses(
 					/* translators: %s: post title */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'medspastarter' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'genericstarter' ),
 					[ 'span' => [ 'class' => [] ] ]
 				),
 				wp_kses_post( get_the_title() )
@@ -108,8 +108,8 @@ if ( ! function_exists( 'medspastarter_edit_link' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'medspastarter_reading_time' ) ) :
-	function medspastarter_reading_time(): void {
+if ( ! function_exists( 'genericstarter_reading_time' ) ) :
+	function genericstarter_reading_time(): void {
 		if ( 'post' !== get_post_type() ) {
 			return;
 		}
@@ -117,15 +117,15 @@ if ( ! function_exists( 'medspastarter_reading_time' ) ) :
 		$word_count  = (int) str_word_count( wp_strip_all_tags( $post->post_content ) );
 		$minutes     = max( 1, (int) ceil( $word_count / 225 ) );
 		echo '<span class="reading-time flex items-center gap-1">';
-		medspastarter_icon( 'clock', 'w-4 h-4 shrink-0' );
+		genericstarter_icon( 'clock', 'w-4 h-4 shrink-0' );
 		/* translators: %d: minutes to read */
-		printf( esc_html( _n( '%d min read', '%d min read', $minutes, 'medspastarter' ) ), $minutes );
+		printf( esc_html( _n( '%d min read', '%d min read', $minutes, 'genericstarter' ) ), $minutes );
 		echo '</span>';
 	}
 endif;
 
-if ( ! function_exists( 'medspastarter_category_badge' ) ) :
-	function medspastarter_category_badge(): void {
+if ( ! function_exists( 'genericstarter_category_badge' ) ) :
+	function genericstarter_category_badge(): void {
 		if ( 'post' !== get_post_type() ) {
 			return;
 		}
@@ -137,8 +137,8 @@ if ( ! function_exists( 'medspastarter_category_badge' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'medspastarter_breadcrumbs' ) ) :
-	function medspastarter_breadcrumbs(): void {
+if ( ! function_exists( 'genericstarter_breadcrumbs' ) ) :
+	function genericstarter_breadcrumbs(): void {
 		if ( ! get_theme_mod( 'has_breadcrumbs', true ) ) {
 			return;
 		}
@@ -147,7 +147,7 @@ if ( ! function_exists( 'medspastarter_breadcrumbs' ) ) :
 		}
 
 		$items   = [];
-		$items[] = '<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'medspastarter' ) . '</a>';
+		$items[] = '<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'genericstarter' ) . '</a>';
 
 		if ( is_singular() ) {
 			if ( 'post' === get_post_type() ) {
@@ -164,15 +164,15 @@ if ( ! function_exists( 'medspastarter_breadcrumbs' ) ) :
 		} elseif ( is_archive() ) {
 			$items[] = '<span aria-current="page">' . esc_html( get_the_archive_title() ) . '</span>';
 		} elseif ( is_search() ) {
-			$items[] = '<span aria-current="page">' . esc_html__( 'Search results', 'medspastarter' ) . '</span>';
+			$items[] = '<span aria-current="page">' . esc_html__( 'Search results', 'genericstarter' ) . '</span>';
 		} elseif ( is_404() ) {
-			$items[] = '<span aria-current="page">' . esc_html__( 'Page not found', 'medspastarter' ) . '</span>';
+			$items[] = '<span aria-current="page">' . esc_html__( 'Page not found', 'genericstarter' ) . '</span>';
 		}
 
-		$sep   = medspastarter_get_icon( 'chevron-right', 'w-3 h-3 rtl:rotate-180 shrink-0' );
+		$sep   = genericstarter_get_icon( 'chevron-right', 'w-3 h-3 rtl:rotate-180 shrink-0' );
 		$count = count( $items );
 
-		echo '<nav class="breadcrumbs mb-4" aria-label="' . esc_attr__( 'Breadcrumb', 'medspastarter' ) . '">';
+		echo '<nav class="breadcrumbs mb-4" aria-label="' . esc_attr__( 'Breadcrumb', 'genericstarter' ) . '">';
 		echo '<ol class="flex flex-wrap items-center gap-1.5 text-sm text-neutral-500 dark:text-neutral-400">';
 		foreach ( $items as $i => $item ) {
 			echo '<li class="flex items-center gap-1.5">';
@@ -186,8 +186,8 @@ if ( ! function_exists( 'medspastarter_breadcrumbs' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'medspastarter_comment_template' ) ) :
-	function medspastarter_comment_template( WP_Comment $comment, array $args, int $depth ): void {
+if ( ! function_exists( 'genericstarter_comment_template' ) ) :
+	function genericstarter_comment_template( WP_Comment $comment, array $args, int $depth ): void {
 		$GLOBALS['comment'] = $comment;
 		?>
 		<li id="comment-<?php comment_ID(); ?>" <?php comment_class( 'comment-item flex gap-4', $comment ); ?>>
@@ -205,7 +205,7 @@ if ( ! function_exists( 'medspastarter_comment_template' ) ) :
 						<time datetime="<?php comment_time( 'c' ); ?>"><?php comment_date(); ?></time>
 					</a>
 					<?php if ( '0' === $comment->comment_approved ) : ?>
-					<em class="text-sm text-secondary"><?php esc_html_e( 'Awaiting moderation.', 'medspastarter' ); ?></em>
+					<em class="text-sm text-secondary"><?php esc_html_e( 'Awaiting moderation.', 'genericstarter' ); ?></em>
 					<?php endif; ?>
 				</div>
 
@@ -230,15 +230,15 @@ if ( ! function_exists( 'medspastarter_comment_template' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'medspastarter_post_navigation' ) ) :
-	function medspastarter_post_navigation(): void {
+if ( ! function_exists( 'genericstarter_post_navigation' ) ) :
+	function genericstarter_post_navigation(): void {
 		the_post_navigation( [
 			'prev_text' => '<span class="flex items-center gap-2 text-sm font-medium text-neutral-700 dark:text-neutral-400 group-hover:text-primary dark:group-hover:text-primary-light transition-colors">'
-				. medspastarter_get_icon( 'arrow-left', 'w-4 h-4 rtl:rotate-180' )
-				. '<span><span class="block text-xs text-neutral-700/50 dark:text-neutral-500 uppercase tracking-wide">' . esc_html__( 'Previous', 'medspastarter' ) . '</span>%title</span></span>',
+				. genericstarter_get_icon( 'arrow-left', 'w-4 h-4 rtl:rotate-180' )
+				. '<span><span class="block text-xs text-neutral-700/50 dark:text-neutral-500 uppercase tracking-wide">' . esc_html__( 'Previous', 'genericstarter' ) . '</span>%title</span></span>',
 			'next_text' => '<span class="flex items-center gap-2 text-sm font-medium text-neutral-700 dark:text-neutral-400 group-hover:text-primary dark:group-hover:text-primary-light transition-colors">'
-				. '<span><span class="block text-xs text-neutral-700/50 dark:text-neutral-500 uppercase tracking-wide">' . esc_html__( 'Next', 'medspastarter' ) . '</span>%title</span>'
-				. medspastarter_get_icon( 'arrow-right', 'w-4 h-4 rtl:rotate-180' ) . '</span>',
+				. '<span><span class="block text-xs text-neutral-700/50 dark:text-neutral-500 uppercase tracking-wide">' . esc_html__( 'Next', 'genericstarter' ) . '</span>%title</span>'
+				. genericstarter_get_icon( 'arrow-right', 'w-4 h-4 rtl:rotate-180' ) . '</span>',
 			'class'     => 'post-navigation flex items-stretch justify-between gap-4 py-8 border-t border-neutral-200 dark:border-neutral-700',
 		] );
 	}

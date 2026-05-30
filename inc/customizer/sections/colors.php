@@ -6,48 +6,48 @@ declare(strict_types=1);
  * Stored values are output as CSS custom properties in wp_head so they can
  * override the compiled Tailwind defaults at runtime.
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
-function medspastarter_customizer_colors( WP_Customize_Manager $wp_customize ): void {
+function genericstarter_customizer_colors( WP_Customize_Manager $wp_customize ): void {
 
-	$wp_customize->add_section( 'medspastarter_colors', [
-		'title'    => esc_html__( 'Colors', 'medspastarter' ),
+	$wp_customize->add_section( 'genericstarter_colors', [
+		'title'    => esc_html__( 'Colors', 'genericstarter' ),
 		'priority' => 40,
 	] );
 
 	$color_settings = [
 		// Brand
-		'color_primary'   => [ '#f25f5a', esc_html__( 'Primary (Coral)', 'medspastarter' ) ],
-		'color_secondary' => [ '#C9A96E', esc_html__( 'Secondary (Gold)', 'medspastarter' ) ],
+		'color_primary'   => [ '#f25f5a', esc_html__( 'Primary (Coral)', 'genericstarter' ) ],
+		'color_secondary' => [ '#C9A96E', esc_html__( 'Secondary (Gold)', 'genericstarter' ) ],
 		// Text
-		'color_text'      => [ '#3A3D3C', esc_html__( 'Body Text', 'medspastarter' ) ],
-		'color_heading'   => [ '#1A1C1B', esc_html__( 'Heading Text', 'medspastarter' ) ],
-		'color_border'    => [ '#E5E7E6', esc_html__( 'Border / Divider', 'medspastarter' ) ],
+		'color_text'      => [ '#3A3D3C', esc_html__( 'Body Text', 'genericstarter' ) ],
+		'color_heading'   => [ '#1A1C1B', esc_html__( 'Heading Text', 'genericstarter' ) ],
+		'color_border'    => [ '#E5E7E6', esc_html__( 'Border / Divider', 'genericstarter' ) ],
 		// Section backgrounds
-		'color_bg_topbar' => [ '#f25f5a', esc_html__( 'Top Bar Background', 'medspastarter' ) ],
-		'color_bg_header' => [ '#FFFFFF', esc_html__( 'Header Background', 'medspastarter' ) ],
-		'color_bg_body'   => [ '#FAFAFA', esc_html__( 'Body Background', 'medspastarter' ) ],
-		'color_bg_footer' => [ '#1A1C1B', esc_html__( 'Footer Background', 'medspastarter' ) ],
+		'color_bg_topbar' => [ '#f25f5a', esc_html__( 'Top Bar Background', 'genericstarter' ) ],
+		'color_bg_header' => [ '#FFFFFF', esc_html__( 'Header Background', 'genericstarter' ) ],
+		'color_bg_body'   => [ '#FAFAFA', esc_html__( 'Body Background', 'genericstarter' ) ],
+		'color_bg_footer' => [ '#1A1C1B', esc_html__( 'Footer Background', 'genericstarter' ) ],
 	];
 
 	foreach ( $color_settings as $id => [ $default, $label ] ) {
 		$wp_customize->add_setting( $id, [
 			'default'           => $default,
-			'sanitize_callback' => 'medspastarter_sanitize_hex_color',
+			'sanitize_callback' => 'genericstarter_sanitize_hex_color',
 			'transport'         => 'postMessage',
 		] );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control( $wp_customize, $id, [
 				'label'   => $label,
-				'section' => 'medspastarter_colors',
+				'section' => 'genericstarter_colors',
 			] )
 		);
 	}
 
 }
 
-function medspastarter_output_color_css(): void {
+function genericstarter_output_color_css(): void {
 	$defaults = [
 		'color_primary'   => '#f25f5a',
 		'color_secondary' => '#C9A96E',
@@ -93,6 +93,6 @@ function medspastarter_output_color_css(): void {
 	if ( $mods['color_bg_footer'] !== $defaults['color_bg_footer'] ) $css .= '.site-footer{background-color:' . sanitize_hex_color( $mods['color_bg_footer'] ) . ';}';
 
 	if ( $css ) {
-		echo '<style id="medspastarter-color-overrides">' . $css . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<style id="genericstarter-color-overrides">' . $css . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }

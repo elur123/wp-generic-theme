@@ -13,7 +13,7 @@
  *
  * Vanilla JS against the global `wp` (no JSX / build step).
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 ( function ( wp ) {
 	'use strict';
@@ -35,9 +35,9 @@
 	var TARGET_BLOCKS = [ 'core/paragraph', 'core/heading' ];
 
 	var BREAKPOINTS = [
-		{ key: 'mobile',  label: __( 'Mobile (base, all screens)', 'medspastarter' ) },
-		{ key: 'tablet',  label: __( 'Tablet (≥ 768px)', 'medspastarter' ) },
-		{ key: 'desktop', label: __( 'Desktop (≥ 1024px)', 'medspastarter' ) },
+		{ key: 'mobile',  label: __( 'Mobile (base, all screens)', 'genericstarter' ) },
+		{ key: 'tablet',  label: __( 'Tablet (≥ 768px)', 'genericstarter' ) },
+		{ key: 'desktop', label: __( 'Desktop (≥ 1024px)', 'genericstarter' ) },
 	];
 
 	function isTarget( name ) {
@@ -93,7 +93,7 @@
 	// 1. Register the two attributes on the target blocks.
 	addFilter(
 		'blocks.registerBlockType',
-		'medspastarter/responsive-type-attributes',
+		'genericstarter/responsive-type-attributes',
 		function ( settings, name ) {
 			if ( ! isTarget( name ) ) {
 				return settings;
@@ -136,7 +136,7 @@
 					key: bp.key,
 					label: bp.label,
 					value: sizes[ bp.key ] || '',
-					placeholder: __( 'e.g. 1.25rem, 20px, 4vw', 'medspastarter' ),
+					placeholder: __( 'e.g. 1.25rem, 20px, 4vw', 'genericstarter' ),
 					onChange: function ( v ) { setSize( bp.key, v ); },
 					__nextHasNoMarginBottom: true,
 				} );
@@ -148,12 +148,12 @@
 				el( BlockEdit, props ),
 				el( InspectorControls, {},
 					el( PanelBody, {
-						title: __( 'Responsive Font Size', 'medspastarter' ),
+						title: __( 'Responsive Font Size', 'genericstarter' ),
 						initialOpen: false,
 					},
 						el( 'p', {
 							style: { marginTop: 0, color: '#757575', fontSize: '12px' },
-						}, __( 'Leave blank to inherit. Overrides the default Size above. Switch the editor device preview to test.', 'medspastarter' ) ),
+						}, __( 'Leave blank to inherit. Overrides the default Size above. Switch the editor device preview to test.', 'genericstarter' ) ),
 						fields
 					)
 				),
@@ -161,7 +161,7 @@
 			);
 		};
 	}, 'withMspResponsiveType' );
-	addFilter( 'editor.BlockEdit', 'medspastarter/responsive-type-controls', withControls );
+	addFilter( 'editor.BlockEdit', 'genericstarter/responsive-type-controls', withControls );
 
 	// 3. Add the scoping class to the block wrapper in the editor canvas.
 	var withClass = createHigherOrderComponent( function ( BlockListBlock ) {
@@ -175,12 +175,12 @@
 			return el( BlockListBlock, Object.assign( {}, props, { className: className } ) );
 		};
 	}, 'withMspResponsiveTypeClass' );
-	addFilter( 'editor.BlockListBlock', 'medspastarter/responsive-type-listclass', withClass );
+	addFilter( 'editor.BlockListBlock', 'genericstarter/responsive-type-listclass', withClass );
 
 	// 4. Persist the scoping class into the saved block markup.
 	addFilter(
 		'blocks.getSaveContent.extraProps',
-		'medspastarter/responsive-type-saveprops',
+		'genericstarter/responsive-type-saveprops',
 		function ( extraProps, blockType, attributes ) {
 			if ( ! isTarget( blockType.name ) ) {
 				return extraProps;

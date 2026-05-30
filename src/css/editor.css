@@ -6,8 +6,8 @@
   --color-primary:       #f25f5a;
   --color-primary-light: #fde8e8;
   --color-secondary:     #C9A96E;
-  --font-heading: "Playfair Display", Georgia, serif;
-  --font-body:    Inter, system-ui, -apple-system, sans-serif;
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body:    "Mulish", system-ui, -apple-system, sans-serif;
 }
 
 @layer base {

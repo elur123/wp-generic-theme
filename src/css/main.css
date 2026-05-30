@@ -16,8 +16,8 @@
   --color-error:            #C0392B;
 
   /* Typography */
-  --font-heading: "Playfair Display", Georgia, serif;
-  --font-body:    Inter, system-ui, -apple-system, sans-serif;
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body:    "Mulish", system-ui, -apple-system, sans-serif;
 
   /* Shadows */
   --shadow-card:       0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
@@ -40,8 +40,8 @@
   --wp--preset--color--neutral-700:      #3A3D3C;
   --wp--preset--color--neutral-900:      #1A1C1B;
   --wp--preset--color--white:            #FFFFFF;
-  --wp--preset--font-family--heading:    "Playfair Display", Georgia, serif;
-  --wp--preset--font-family--body:       Inter, system-ui, -apple-system, sans-serif;
+  --wp--preset--font-family--heading:    "Cormorant Garamond", Georgia, serif;
+  --wp--preset--font-family--body:       "Mulish", system-ui, -apple-system, sans-serif;
 }
 
 /* ─── Base Layer ─────────────────────────────────────────────── */

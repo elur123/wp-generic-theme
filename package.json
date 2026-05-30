@@ -1,7 +1,7 @@
 {
-  "name": "medspastarter",
+  "name": "genericstarter",
   "version": "1.0.0",
-  "description": "WordPress theme for medical spas — TailwindCSS v4 + Vite",
+  "description": "Generic WordPress starter theme — TailwindCSS v4 + Vite",
   "private": true,
   "type": "module",
   "scripts": {

@@ -4,43 +4,43 @@
  *
  * Used by single.php.
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 ?>
 
-<?php medspastarter_breadcrumbs(); ?>
+<?php genericstarter_breadcrumbs(); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?> <?php medspastarter_schema( 'article' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?> <?php genericstarter_schema( 'article' ); ?>>
 
-	<?php medspastarter_post_thumbnail( 'medspastarter-hero' ); ?>
+	<?php genericstarter_post_thumbnail( 'genericstarter-hero' ); ?>
 
 	<header class="entry-header mb-6">
 
-		<?php medspastarter_category_badge(); ?>
+		<?php genericstarter_category_badge(); ?>
 
-		<h1 class="entry-title font-heading text-3xl md:text-4xl font-bold mt-3 mb-4 text-neutral-900 dark:text-neutral-50" <?php medspastarter_schema( 'entry-title' ); ?>>
+		<h1 class="entry-title font-heading text-3xl md:text-4xl font-bold mt-3 mb-4 text-neutral-900 dark:text-neutral-50" <?php genericstarter_schema( 'entry-title' ); ?>>
 			<?php the_title(); ?>
 		</h1>
 
 		<div class="post-meta mt-3">
 			<?php
-			medspastarter_posted_on();
-			medspastarter_posted_by();
-			medspastarter_posted_in();
-			medspastarter_reading_time();
+			genericstarter_posted_on();
+			genericstarter_posted_by();
+			genericstarter_posted_in();
+			genericstarter_reading_time();
 			?>
 		</div>
 
-		<?php medspastarter_edit_link(); ?>
+		<?php genericstarter_edit_link(); ?>
 	</header>
 
-	<div class="entry-content" <?php medspastarter_schema( 'article' ); ?>>
+	<div class="entry-content" <?php genericstarter_schema( 'article' ); ?>>
 		<?php
 		the_content(
 			sprintf(
 				wp_kses(
 					/* translators: %s: post title */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'medspastarter' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'genericstarter' ),
 					[ 'span' => [ 'class' => [] ] ]
 				),
 				wp_kses_post( get_the_title() )
@@ -49,14 +49,14 @@
 
 		wp_link_pages( [
 			'before' => '<div class="page-links flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-700">'
-				. '<span class="text-sm font-semibold">' . esc_html__( 'Pages:', 'medspastarter' ) . '</span>',
+				. '<span class="text-sm font-semibold">' . esc_html__( 'Pages:', 'genericstarter' ) . '</span>',
 			'after'  => '</div>',
 		] );
 		?>
 	</div>
 
 	<footer class="entry-footer mt-8">
-		<?php medspastarter_tagged_in(); ?>
+		<?php genericstarter_tagged_in(); ?>
 	</footer>
 
 	<!-- Author box -->

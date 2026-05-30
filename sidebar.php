@@ -2,7 +2,7 @@
 /**
  * Sidebar widget area
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
@@ -10,7 +10,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area mt-10 lg:mt-0" role="complementary" aria-label="<?php esc_attr_e( 'Sidebar', 'medspastarter' ); ?>">
+<aside id="secondary" class="widget-area mt-10 lg:mt-0" role="complementary" aria-label="<?php esc_attr_e( 'Sidebar', 'genericstarter' ); ?>">
 	<div class="sidebar-inner sticky top-24 space-y-8">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div>

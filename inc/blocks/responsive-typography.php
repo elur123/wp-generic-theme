@@ -7,7 +7,7 @@ declare( strict_types=1 );
  * front end, renders the per-breakpoint font sizes stored on paragraph/heading
  * blocks as scoped media-query CSS.
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,19 +17,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Load the block-editor extension.
  */
-function medspastarter_responsive_typography_editor_assets(): void {
+function genericstarter_responsive_typography_editor_assets(): void {
 	$path = get_template_directory() . '/assets/js/responsive-typography.js';
-	$ver  = file_exists( $path ) ? (string) filemtime( $path ) : MEDSPASTARTER_VERSION;
+	$ver  = file_exists( $path ) ? (string) filemtime( $path ) : GENERICSTARTER_VERSION;
 
 	wp_enqueue_script(
-		'medspastarter-responsive-typography',
+		'genericstarter-responsive-typography',
 		get_template_directory_uri() . '/assets/js/responsive-typography.js',
 		[ 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-hooks', 'wp-compose', 'wp-i18n' ],
 		$ver,
 		true
 	);
 }
-add_action( 'enqueue_block_editor_assets', 'medspastarter_responsive_typography_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'genericstarter_responsive_typography_editor_assets' );
 
 /**
  * Validate a CSS length value before it is printed into a <style> tag.
@@ -40,7 +40,7 @@ add_action( 'enqueue_block_editor_assets', 'medspastarter_responsive_typography_
  *
  * @return string The value if safe, otherwise an empty string.
  */
-function medspastarter_rt_safe_size( $value ): string {
+function genericstarter_rt_safe_size( $value ): string {
 	$value = trim( (string) $value );
 	if ( '' === $value ) {
 		return '';
@@ -59,7 +59,7 @@ function medspastarter_rt_safe_size( $value ): string {
 /**
  * Inject scoped responsive font-size CSS in front of the block markup.
  */
-function medspastarter_responsive_typography_render( string $block_content, array $block ): string {
+function genericstarter_responsive_typography_render( string $block_content, array $block ): string {
 	$attrs = $block['attrs'] ?? [];
 
 	if ( empty( $attrs['mspFsId'] ) || empty( $attrs['mspFontSize'] ) || ! is_array( $attrs['mspFontSize'] ) ) {
@@ -73,9 +73,9 @@ function medspastarter_responsive_typography_render( string $block_content, arra
 
 	$sizes   = $attrs['mspFontSize'];
 	$sel     = '.mfs-' . $id;
-	$mobile  = medspastarter_rt_safe_size( $sizes['mobile']  ?? '' );
-	$tablet  = medspastarter_rt_safe_size( $sizes['tablet']  ?? '' );
-	$desktop = medspastarter_rt_safe_size( $sizes['desktop'] ?? '' );
+	$mobile  = genericstarter_rt_safe_size( $sizes['mobile']  ?? '' );
+	$tablet  = genericstarter_rt_safe_size( $sizes['tablet']  ?? '' );
+	$desktop = genericstarter_rt_safe_size( $sizes['desktop'] ?? '' );
 
 	// !important so these beat core's preset font-size classes (which are
 	// emitted with !important) and any custom inline font-size on the block.
@@ -96,4 +96,4 @@ function medspastarter_responsive_typography_render( string $block_content, arra
 
 	return '<style>' . $css . '</style>' . $block_content;
 }
-add_filter( 'render_block', 'medspastarter_responsive_typography_render', 10, 2 );
+add_filter( 'render_block', 'genericstarter_responsive_typography_render', 10, 2 );

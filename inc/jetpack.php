@@ -5,23 +5,23 @@ declare(strict_types=1);
  *
  * Only loaded when Jetpack is active (guarded by class_exists in functions.php).
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
 // Declare Jetpack feature support
-add_action( 'after_setup_theme', 'medspastarter_jetpack_setup' );
+add_action( 'after_setup_theme', 'genericstarter_jetpack_setup' );
 
-function medspastarter_jetpack_setup(): void {
+function genericstarter_jetpack_setup(): void {
 	// Infinite scroll — uses the theme's loop markup
 	add_theme_support( 'infinite-scroll', [
 		'container' => 'posts-grid',
-		'render'    => 'medspastarter_infinite_scroll_render',
+		'render'    => 'genericstarter_infinite_scroll_render',
 		'footer'    => 'page',
 	] );
 
 	// Featured content
 	add_theme_support( 'featured-content', [
-		'filter'     => 'medspastarter_get_featured_posts',
+		'filter'     => 'genericstarter_get_featured_posts',
 		'max_posts'  => 6,
 		'post_types' => [ 'post' ],
 	] );
@@ -35,7 +35,7 @@ function medspastarter_jetpack_setup(): void {
 	] );
 }
 
-function medspastarter_infinite_scroll_render(): void {
+function genericstarter_infinite_scroll_render(): void {
 	while ( have_posts() ) {
 		the_post();
 		get_template_part( 'template-parts/content', 'excerpt' );
@@ -43,8 +43,8 @@ function medspastarter_infinite_scroll_render(): void {
 }
 
 /** @return WP_Post[] */
-function medspastarter_get_featured_posts(): array {
-	return apply_filters( 'medspastarter_get_featured_posts', [] ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+function genericstarter_get_featured_posts(): array {
+	return apply_filters( 'genericstarter_get_featured_posts', [] ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 }
 
 // Disable Jetpack's default open graph tags — Yoast/RankMath handle these

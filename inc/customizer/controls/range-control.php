@@ -3,17 +3,17 @@ declare(strict_types=1);
 /**
  * Range slider Customizer control
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return;
 }
 
-class Medspastarter_Range_Control extends WP_Customize_Control {
+class Genericstarter_Range_Control extends WP_Customize_Control {
 
 	/** @var string */
-	public $type = 'medspastarter-range';
+	public $type = 'genericstarter-range';
 
 	/** @var array<string,int> */
 	public $input_attrs = [

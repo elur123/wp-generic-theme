@@ -5,7 +5,6 @@ export default {
     './inc/**/*.php',
     './template-parts/**/*.php',
     './page-templates/**/*.php',
-    './patterns/**/*.php',
     './src/js/**/*.js',
   ],
   darkMode: 'class',

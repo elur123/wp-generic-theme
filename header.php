@@ -2,7 +2,7 @@
 /**
  * Site header — outputs <html> through </header>
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 ?>
 <!doctype html>
@@ -14,21 +14,21 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-neutral-50 dark:bg-neutral-900' ); ?> <?php medspastarter_schema( 'body' ); ?>>
+<body <?php body_class( 'bg-neutral-50 dark:bg-neutral-900' ); ?> <?php genericstarter_schema( 'body' ); ?>>
 <?php wp_body_open(); ?>
 
 <div id="page" class="site min-h-screen flex flex-col">
 
-	<a class="screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'medspastarter' ); ?></a>
+	<a class="screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'genericstarter' ); ?></a>
 
 	<?php
 	/**
-	 * medspastarter_top_bar
-	 * @hooked medspastarter_top_bar_output — phone, email, location strip
+	 * genericstarter_top_bar
+	 * @hooked genericstarter_top_bar_output — phone, email, location strip
 	 */
-	do_action( 'medspastarter_top_bar' ); ?>
+	do_action( 'genericstarter_top_bar' ); ?>
 
-	<header id="masthead" <?php medspastarter_schema( 'header' ); ?>
+	<header id="masthead" <?php genericstarter_schema( 'header' ); ?>
 		class="site-header <?php echo get_theme_mod( 'sticky_header', true ) ? 'sticky top-0' : 'relative'; ?> z-50 bg-white/95 backdrop-blur-sm shadow-nav dark:bg-neutral-900/95 dark:border-b dark:border-neutral-800">
 
 		<?php
@@ -44,7 +44,7 @@
 			<div class="site-meta">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 					class="site-title font-heading font-bold text-neutral-900 dark:text-white no-underline hover:text-primary transition-colors"
-					<?php medspastarter_schema( 'site-title' ); ?> rel="home">
+					<?php genericstarter_schema( 'site-title' ); ?> rel="home">
 					<?php bloginfo( 'name' ); ?>
 				</a>
 				<?php $description = get_bloginfo( 'description', 'display' );
@@ -60,19 +60,18 @@
 
 		// ── Shared: actions (search, dark mode, CTA, hamburger) ──────────────
 		ob_start();
-		do_action( 'medspastarter_search_toggle' );
-		do_action( 'medspastarter_dark_mode_toggle' );
-		do_action( 'medspastarter_header_cta' );
+		do_action( 'genericstarter_search_toggle' );
+		do_action( 'genericstarter_dark_mode_toggle' );
 		echo '<button class="menu-toggle lg:hidden p-2 rounded-full text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800 transition-colors"'
 			. ' aria-controls="mobile-menu" aria-expanded="false"'
-			. ' aria-label="' . esc_attr__( 'Toggle navigation', 'medspastarter' ) . '">';
-		medspastarter_icon( 'bars-3', 'w-6 h-6' );
+			. ' aria-label="' . esc_attr__( 'Toggle navigation', 'genericstarter' ) . '">';
+		genericstarter_icon( 'bars-3', 'w-6 h-6' );
 		echo '</button>';
 		$actions = ob_get_clean();
 
 		// ── Nav schema + aria attrs (reused in each layout) ──────────────────
-		ob_start(); medspastarter_schema( 'menu' ); $nav_schema = ob_get_clean();
-		$nav_attrs = $nav_schema . ' aria-label="' . esc_attr__( 'Primary navigation', 'medspastarter' ) . '"';
+		ob_start(); genericstarter_schema( 'menu' ); $nav_schema = ob_get_clean();
+		$nav_attrs = $nav_schema . ' aria-label="' . esc_attr__( 'Primary navigation', 'genericstarter' ) . '"';
 		?>
 
 		<?php if ( 'centered-logo' === $header_layout ) : ?>
@@ -92,7 +91,7 @@
 			<div class="hidden lg:flex items-center justify-between py-2 md:py-3 min-h-[4rem] md:min-h-[5rem]">
 				<nav id="main-navigation" <?php echo $nav_attrs; // phpcs:ignore ?>
 					class="main-navigation">
-					<?php do_action( 'medspastarter_primary_menu' ); ?>
+					<?php do_action( 'genericstarter_primary_menu' ); ?>
 				</nav>
 				<div class="absolute left-1/2 -translate-x-1/2">
 					<?php echo $branding; // phpcs:ignore ?>
@@ -123,7 +122,7 @@
 				<div class="flex items-center gap-2">
 					<nav id="main-navigation" <?php echo $nav_attrs; // phpcs:ignore ?>
 						class="main-navigation">
-						<?php do_action( 'medspastarter_primary_menu' ); ?>
+						<?php do_action( 'genericstarter_primary_menu' ); ?>
 					</nav>
 					<div class="header-actions flex items-center gap-1">
 						<?php echo $actions; // phpcs:ignore ?>
@@ -144,17 +143,17 @@
 				<button class="menu-toggle p-2 rounded-full text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800 transition-colors"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
-					aria-label="<?php esc_attr_e( 'Toggle navigation', 'medspastarter' ); ?>">
-					<?php medspastarter_icon( 'bars-3', 'w-6 h-6' ); ?>
+					aria-label="<?php esc_attr_e( 'Toggle navigation', 'genericstarter' ); ?>">
+					<?php genericstarter_icon( 'bars-3', 'w-6 h-6' ); ?>
 				</button>
 			</div>
 
 			<!-- Desktop row: left nav · logo absolute center · right nav -->
 			<div class="hidden lg:flex items-center justify-between py-2 md:py-3 min-h-[4rem] md:min-h-[5rem]">
 				<nav id="main-navigation-left" <?php echo $nav_schema; // phpcs:ignore ?>
-					aria-label="<?php esc_attr_e( 'Primary navigation left', 'medspastarter' ); ?>"
+					aria-label="<?php esc_attr_e( 'Primary navigation left', 'genericstarter' ); ?>"
 					class="main-navigation">
-					<?php medspastarter_split_nav_menu( 'left' ); ?>
+					<?php genericstarter_split_nav_menu( 'left' ); ?>
 				</nav>
 
 				<div class="absolute left-1/2 -translate-x-1/2">
@@ -162,9 +161,9 @@
 				</div>
 
 				<nav id="main-navigation-right"
-					aria-label="<?php esc_attr_e( 'Primary navigation right', 'medspastarter' ); ?>"
+					aria-label="<?php esc_attr_e( 'Primary navigation right', 'genericstarter' ); ?>"
 					class="main-navigation">
-					<?php medspastarter_split_nav_menu( 'right' ); ?>
+					<?php genericstarter_split_nav_menu( 'right' ); ?>
 				</nav>
 			</div>
 
@@ -179,7 +178,7 @@
 
 			<nav id="main-navigation" <?php echo $nav_attrs; // phpcs:ignore ?>
 				class="main-navigation flex-1">
-				<?php do_action( 'medspastarter_primary_menu' ); ?>
+				<?php do_action( 'genericstarter_primary_menu' ); ?>
 			</nav>
 
 			<div class="header-actions flex items-center gap-1">
@@ -199,7 +198,7 @@
 
 <!-- Mobile drawer panel -->
 <nav id="mobile-menu"
-	aria-label="<?php esc_attr_e( 'Mobile navigation', 'medspastarter' ); ?>"
+	aria-label="<?php esc_attr_e( 'Mobile navigation', 'genericstarter' ); ?>"
 	class="fixed inset-y-0 right-0 z-50 w-80 max-w-[85vw] flex flex-col lg:hidden
 	       bg-white dark:bg-neutral-900 shadow-2xl overflow-hidden
 	       translate-x-full transition-transform duration-300 ease-in-out">
@@ -207,11 +206,11 @@
 	<!-- Drawer header -->
 	<div class="flex items-center justify-between px-5 py-4 border-b border-neutral-100 dark:border-neutral-800 shrink-0">
 		<span class="font-heading font-bold text-lg text-neutral-900 dark:text-white">
-			<?php esc_html_e( 'Menu', 'medspastarter' ); ?>
+			<?php esc_html_e( 'Menu', 'genericstarter' ); ?>
 		</span>
 		<button class="drawer-close p-2 rounded-full text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:text-white dark:hover:bg-neutral-800 transition-colors"
-			aria-label="<?php esc_attr_e( 'Close menu', 'medspastarter' ); ?>">
-			<?php medspastarter_icon( 'x-mark', 'w-5 h-5' ); ?>
+			aria-label="<?php esc_attr_e( 'Close menu', 'genericstarter' ); ?>">
+			<?php genericstarter_icon( 'x-mark', 'w-5 h-5' ); ?>
 		</button>
 	</div>
 
@@ -227,17 +226,5 @@
 		] );
 		?>
 	</div>
-
-	<!-- CTA -->
-	<?php
-	$cta_text = get_theme_mod( 'booking_cta_text', __( 'Book Consultation', 'medspastarter' ) );
-	$cta_url  = esc_url( get_theme_mod( 'booking_url', '#book' ) );
-	if ( $cta_text ) : ?>
-	<div class="px-5 py-5 border-t border-neutral-100 dark:border-neutral-800 shrink-0">
-		<a href="<?php echo $cta_url; ?>" class="btn-primary w-full justify-center">
-			<?php echo esc_html( $cta_text ); ?>
-		</a>
-	</div>
-	<?php endif; ?>
 
 </nav>

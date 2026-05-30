@@ -4,7 +4,7 @@
  *
  * Used by search.php.
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 ?>
 
@@ -33,7 +33,7 @@
 		</h2>
 
 		<div class="post-meta mb-2 text-sm">
-			<?php medspastarter_posted_on(); ?>
+			<?php genericstarter_posted_on(); ?>
 		</div>
 
 		<p class="text-sm text-neutral-700/70 dark:text-neutral-400 leading-relaxed">

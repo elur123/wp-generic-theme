@@ -3,20 +3,20 @@ declare(strict_types=1);
 /**
  * Inline SVG icon system (Heroicons v2, outline, 24px)
  *
- * Usage: medspastarter_icon( 'search' )
- *        echo medspastarter_get_icon( 'calendar' )
+ * Usage: genericstarter_icon( 'search' )
+ *        echo genericstarter_get_icon( 'calendar' )
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
-function medspastarter_get_icon( string $icon, string $class = 'w-5 h-5' ): string {
-	$paths = medspastarter_icon_paths();
+function genericstarter_get_icon( string $icon, string $class = 'w-5 h-5' ): string {
+	$paths = genericstarter_icon_paths();
 
 	if ( ! isset( $paths[ $icon ] ) ) {
 		return '';
 	}
 
-	$svg_class = esc_attr( 'medspastarter-icon icon-' . $icon . ( $class ? ' ' . $class : '' ) );
+	$svg_class = esc_attr( 'genericstarter-icon icon-' . $icon . ( $class ? ' ' . $class : '' ) );
 
 	return sprintf(
 		'<svg class="%s" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">%s</svg>',
@@ -25,11 +25,11 @@ function medspastarter_get_icon( string $icon, string $class = 'w-5 h-5' ): stri
 	);
 }
 
-function medspastarter_icon( string $icon, string $class = 'w-5 h-5' ): void {
-	echo medspastarter_get_icon( $icon, $class ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+function genericstarter_icon( string $icon, string $class = 'w-5 h-5' ): void {
+	echo genericstarter_get_icon( $icon, $class ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
-function medspastarter_icon_paths(): array {
+function genericstarter_icon_paths(): array {
 	return [
 		// Navigation
 		'bars-3'           => '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>',

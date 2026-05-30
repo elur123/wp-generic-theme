@@ -3,7 +3,7 @@ declare(strict_types=1);
 /**
  * Filters and helper functions used across templates
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
 // ─── Excerpt ───────────────────────────────────────────────────────────────
@@ -23,7 +23,7 @@ add_filter( 'body_class', function ( array $classes ): array {
 		$classes[] = 'archive-view';
 	}
 
-	if ( medspastarter_has_sidebar() ) {
+	if ( genericstarter_has_sidebar() ) {
 		$classes[] = 'has-sidebar';
 	} else {
 		$classes[] = 'no-sidebar';
@@ -46,7 +46,7 @@ add_action( 'wp_head', function (): void {
 
 // ─── Sidebar helpers ───────────────────────────────────────────────────────
 
-function medspastarter_has_sidebar(): bool {
+function genericstarter_has_sidebar(): bool {
 	if ( is_404() || is_search() ) {
 		return false;
 	}
@@ -64,16 +64,16 @@ function medspastarter_has_sidebar(): bool {
 
 // ─── Blog layout helpers ───────────────────────────────────────────────────
 
-function medspastarter_blog_columns(): int {
+function genericstarter_blog_columns(): int {
 	return (int) get_theme_mod( 'blog_columns', 3 );
 }
 
-function medspastarter_blog_grid_class(): string {
+function genericstarter_blog_grid_class(): string {
 	if ( 'list' === get_theme_mod( 'blog_layout', 'grid' ) ) {
 		return 'flex flex-col gap-6';
 	}
 
-	$cols = medspastarter_blog_columns();
+	$cols = genericstarter_blog_columns();
 	return match( $cols ) {
 		2       => 'grid grid-cols-1 sm:grid-cols-2 gap-8',
 		3       => 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8',
@@ -84,9 +84,9 @@ function medspastarter_blog_grid_class(): string {
 
 // ─── Schema.org output ─────────────────────────────────────────────────────
 
-function medspastarter_schema( string $context ): void {
+function genericstarter_schema( string $context ): void {
 	$schemas = [
-		'body'         => 'itemscope itemtype="https://schema.org/MedicalOrganization"',
+		'body'         => 'itemscope itemtype="https://schema.org/Organization"',
 		'header'       => 'itemscope itemtype="https://schema.org/WPHeader"',
 		'footer'       => 'itemscope itemtype="https://schema.org/WPFooter"',
 		'menu'         => 'itemscope itemtype="https://schema.org/SiteNavigationElement"',
@@ -96,8 +96,6 @@ function medspastarter_schema( string $context ): void {
 		'image'        => 'itemprop="image"',
 		'time'         => 'itemprop="datePublished"',
 		'article'      => 'itemscope itemtype="https://schema.org/Article"',
-		'physician'    => 'itemscope itemtype="https://schema.org/Physician"',
-		'service'      => 'itemscope itemtype="https://schema.org/MedicalProcedure"',
 	];
 
 	if ( isset( $schemas[ $context ] ) ) {
@@ -107,7 +105,7 @@ function medspastarter_schema( string $context ): void {
 
 // ─── Pagination ────────────────────────────────────────────────────────────
 
-function medspastarter_pagination(): void {
+function genericstarter_pagination(): void {
 	global $wp_query;
 
 	$total = (int) $wp_query->max_num_pages;
@@ -123,8 +121,8 @@ function medspastarter_pagination(): void {
 		'format'    => '?paged=%#%',
 		'current'   => $current,
 		'total'     => $total,
-		'prev_text' => medspastarter_get_icon( 'chevron-left', 'w-4 h-4' ),
-		'next_text' => medspastarter_get_icon( 'chevron-right', 'w-4 h-4' ),
+		'prev_text' => genericstarter_get_icon( 'chevron-left', 'w-4 h-4' ),
+		'next_text' => genericstarter_get_icon( 'chevron-right', 'w-4 h-4' ),
 		'before_page_number' => '<span>',
 		'after_page_number'  => '</span>',
 		'type'      => 'plain',
@@ -133,7 +131,7 @@ function medspastarter_pagination(): void {
 
 // ─── Social icons ──────────────────────────────────────────────────────────
 
-function medspastarter_social_icons(
+function genericstarter_social_icons(
 	string $setting_key,
 	string $link_class = 'p-1.5 rounded-full text-neutral-700/60 hover:text-primary transition-colors dark:text-neutral-400 dark:hover:text-primary-light',
 	string $icon_class = 'w-5 h-5'
@@ -163,7 +161,7 @@ function medspastarter_social_icons(
 
 		echo '<a href="' . esc_url( $url ) . '" class="social-link ' . esc_attr( $link_class ) . '"'
 			. ' aria-label="' . esc_attr( ucfirst( $domain ) ) . '" rel="noopener noreferrer" target="_blank">';
-		medspastarter_icon( $icon, $icon_class );
+		genericstarter_icon( $icon, $icon_class );
 		echo '</a>';
 	}
 }
@@ -178,7 +176,7 @@ function medspastarter_social_icons(
  *
  * @param string $side 'left' | 'right'
  */
-function medspastarter_split_nav_menu( string $side ): void {
+function genericstarter_split_nav_menu( string $side ): void {
 	$locations = get_nav_menu_locations();
 	if ( empty( $locations['menu-1'] ) ) {
 		return;
@@ -237,8 +235,8 @@ add_filter( 'nav_menu_item_args', function ( stdClass $args, WP_Post $item, int 
 			|| in_array( 'page_item_has_children', $item->classes, true ) )
 	) {
 		$args->after = '<button class="sub-menu-toggle p-1 ml-1 rounded hover:bg-neutral-100 dark:hover:bg-neutral-700"'
-			. ' aria-expanded="false" aria-label="' . esc_attr__( 'Toggle sub-menu', 'medspastarter' ) . '">'
-			. medspastarter_get_icon( 'chevron-down', 'w-4 h-4' )
+			. ' aria-expanded="false" aria-label="' . esc_attr__( 'Toggle sub-menu', 'genericstarter' ) . '">'
+			. genericstarter_get_icon( 'chevron-down', 'w-4 h-4' )
 			. '</button>';
 	}
 	return $args;

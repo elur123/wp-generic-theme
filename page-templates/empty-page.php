@@ -6,7 +6,7 @@
  * Full-width blank canvas — header + footer only, no content wrapping.
  * Ideal for custom Gutenberg block layouts.
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
 get_header();

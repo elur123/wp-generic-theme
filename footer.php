@@ -2,19 +2,19 @@
 /**
  * Site footer — outputs <footer> through </html>
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 
 /**
- * medspastarter_footer_before
- * @hooked medspastarter_back_to_top_output
- * @hooked medspastarter_search_overlay_output
+ * genericstarter_footer_before
+ * @hooked genericstarter_back_to_top_output
+ * @hooked genericstarter_search_overlay_output
  */
-do_action( 'medspastarter_footer_before' ); ?>
+do_action( 'genericstarter_footer_before' ); ?>
 
-<footer id="colophon" <?php medspastarter_schema( 'footer' ); ?>
+<footer id="colophon" <?php genericstarter_schema( 'footer' ); ?>
 	class="site-footer mt-auto bg-neutral-900 text-neutral-300 dark:bg-neutral-950"
-	aria-label="<?php esc_attr_e( 'Footer', 'medspastarter' ); ?>">
+	aria-label="<?php esc_attr_e( 'Footer', 'genericstarter' ); ?>">
 
 	<!-- Widget area (4-column grid) -->
 	<?php if ( is_active_sidebar( 'sidebar-2' ) || is_active_sidebar( 'sidebar-3' ) || is_active_sidebar( 'sidebar-4' ) || is_active_sidebar( 'sidebar-5' ) ) : ?>
@@ -41,10 +41,10 @@ do_action( 'medspastarter_footer_before' ); ?>
 			<p class="text-sm text-neutral-500 dark:text-neutral-400 text-center sm:text-start">
 				<?php
 				/**
-				 * medspastarter_footer_credits
-				 * @hooked medspastarter_footer_credits_output
+				 * genericstarter_footer_credits
+				 * @hooked genericstarter_footer_credits_output
 				 */
-				do_action( 'medspastarter_footer_credits' ); ?>
+				do_action( 'genericstarter_footer_credits' ); ?>
 			</p>
 
 			<!-- Footer social icons -->
@@ -52,13 +52,13 @@ do_action( 'medspastarter_footer_before' ); ?>
 			$social_urls = get_theme_mod( 'footer_social_icons', '' );
 			if ( $social_urls ) : ?>
 			<div class="footer-social flex items-center gap-1">
-				<?php medspastarter_social_icons( 'footer_social_icons' ); ?>
+				<?php genericstarter_social_icons( 'footer_social_icons' ); ?>
 			</div>
 			<?php endif; ?>
 
 			<!-- Footer navigation -->
 			<?php if ( has_nav_menu( 'menu-3' ) ) : ?>
-			<nav aria-label="<?php esc_attr_e( 'Footer navigation', 'medspastarter' ); ?>">
+			<nav aria-label="<?php esc_attr_e( 'Footer navigation', 'genericstarter' ); ?>">
 				<?php wp_nav_menu( [
 					'theme_location' => 'menu-3',
 					'container'      => false,

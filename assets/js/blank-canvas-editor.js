@@ -8,7 +8,7 @@
  *
  * Vanilla JS (no build step). Reads template state from wp.data.
  *
- * @package MedSpaStarter
+ * @package GenericStarter
  */
 ( function ( wp ) {
 	'use strict';
@@ -18,7 +18,7 @@
 	}
 
 	var TEMPLATE = 'page-templates/blank-canvas.php';
-	var BOX_ID   = 'medspastarter-blank-canvas';
+	var BOX_ID   = 'genericstarter-blank-canvas';
 
 	function isBlankCanvas() {
 		var editor = wp.data.select( 'core/editor' );
@@ -57,10 +57,10 @@
 			return;
 		}
 
-		var fullHeight = fieldVal( 'input[name="medspastarter_bc_full_height"]' );
+		var fullHeight = fieldVal( 'input[name="genericstarter_bc_full_height"]' );
 		wrap.style.minHeight = fullHeight && fullHeight.checked ? '100dvh' : '';
 
-		var center = fieldVal( 'input[name="medspastarter_bc_center"]' );
+		var center = fieldVal( 'input[name="genericstarter_bc_center"]' );
 		if ( center && center.checked ) {
 			wrap.style.display        = 'flex';
 			wrap.style.flexDirection  = 'column';
@@ -75,10 +75,10 @@
 			wrap.style.textAlign      = '';
 		}
 
-		var gradient = fieldVal( 'input[name="medspastarter_bc_gradient"]' );
+		var gradient = fieldVal( 'input[name="genericstarter_bc_gradient"]' );
 		if ( gradient && gradient.checked ) {
-			var colorEl = fieldVal( '#medspastarter_bc_gradient_color' );
-			var yEl     = fieldVal( '#medspastarter_bc_gradient_y' );
+			var colorEl = fieldVal( '#genericstarter_bc_gradient_color' );
+			var yEl     = fieldVal( '#genericstarter_bc_gradient_y' );
 			var color   = colorEl && colorEl.value ? colorEl.value : '#f25f5a';
 			var posY    = yEl ? parseInt( yEl.value, 10 ) : 50;
 
