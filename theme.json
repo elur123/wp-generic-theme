@@ -30,6 +30,11 @@
           "slug": "body",
           "name": "Mulish",
           "fontFamily": "\"Mulish\", system-ui, -apple-system, sans-serif"
+        },
+        {
+          "slug": "display",
+          "name": "Playfair Display",
+          "fontFamily": "\"Playfair Display\", Georgia, serif"
         }
       ],
       "fontSizes": [

@@ -8,6 +8,7 @@
   --color-secondary:     #C9A96E;
   --font-heading: "Cormorant Garamond", Georgia, serif;
   --font-body:    "Mulish", system-ui, -apple-system, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
 }
 
 @layer base {

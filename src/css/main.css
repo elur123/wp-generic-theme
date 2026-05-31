@@ -18,6 +18,7 @@
   /* Typography */
   --font-heading: "Cormorant Garamond", Georgia, serif;
   --font-body:    "Mulish", system-ui, -apple-system, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
 
   /* Shadows */
   --shadow-card:       0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
@@ -42,6 +43,8 @@
   --wp--preset--color--white:            #FFFFFF;
   --wp--preset--font-family--heading:    "Cormorant Garamond", Georgia, serif;
   --wp--preset--font-family--body:       "Mulish", system-ui, -apple-system, sans-serif;
+  --wp--preset--font-family--display:    "Playfair Display", Georgia, serif;
+  --wp--preset--font-family--display:    "Playfair Display", Georgia, serif;
 }
 
 /* ─── Base Layer ─────────────────────────────────────────────── */
